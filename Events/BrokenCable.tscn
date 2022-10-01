@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Objects/BrokenCable.tscn" type="PackedScene" id=1]
+
+[node name="BrokenCable" type="StaticBody"]
+
+[node name="BrokenCable" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0.3, 0, -1, -1.31134e-08, 0, 0, 0, 0.3, 0, 0, 0 )
