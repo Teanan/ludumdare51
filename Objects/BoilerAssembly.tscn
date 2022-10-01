@@ -6,58 +6,35 @@
 [ext_resource path="res://Objects/BoilerAssembly.gd" type="Script" id=4]
 [ext_resource path="res://Objects/Gauge.tscn" type="PackedScene" id=5]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("boiler_door:translation")
+tracks/0/path = NodePath("boiler_door_hinge:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0.819491, 0.24808 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("boiler_door:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=7]
 resource_name = "open_door"
+length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath("boiler_door:translation")
-tracks/0/interp = 1
+tracks/0/path = NodePath("boiler_door_hinge:rotation_degrees")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0.819491, 0.24808 ), Vector3( 0, 1.56064, 0.24808 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("boiler_door:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 114.887, 0 ) ]
 }
 
 [sub_resource type="SpatialMaterial" id=3]
@@ -80,12 +57,15 @@ transform = Transform( 0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 1.19991, 0 )
 [node name="boiler_shaper" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.075, 0, 0, 0, 0.075, 0, 0, 0, 1, 0, 1.19991, -0.65 )
 
-[node name="boiler_door" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0.819491, 0.24808 )
+[node name="boiler_door_hinge" type="Position3D" parent="."]
+transform = Transform( 0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0.529274, 0.7485, 0.229337 )
+
+[node name="boiler_door" parent="boiler_door_hinge" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56106, 1.01416, 0.267759 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/open_door = SubResource( 2 )
+anims/RESET = SubResource( 6 )
+anims/open_door = SubResource( 7 )
 
 [node name="FireParticles" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.470953, -0.00700569 )
