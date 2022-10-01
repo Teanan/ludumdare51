@@ -17,7 +17,7 @@
 [ext_resource path="res://Objects/Coal.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/Gauge/LargeGauge.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/StraightCable.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Objects/BrokenCable.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Events/BrokenCable.tscn" type="PackedScene" id=18]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -118,11 +118,12 @@ transform = Transform( 3.22449, 0.262384, -0.465635, -0.953673, 0.263698, 0, 2.0
 [node name="StraightCable12" parent="LightPlafonnier" instance=ExtResource( 17 )]
 transform = Transform( -4.37114e-07, 0.3, 0, -10, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -0.119387, -0.764972 )
 
-[node name="BrokenCable" parent="LightPlafonnier" instance=ExtResource( 18 )]
-transform = Transform( -4.37114e-08, 0.3, 0, -1, -1.31134e-08, 0, 0, 0, 0.3, -1.98329, -0.665606, -0.765265 )
-
 [node name="StraightCable13" parent="LightPlafonnier" instance=ExtResource( 17 )]
 transform = Transform( -8.74228e-07, 0.3, 0, -20, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -1.61924, -0.764972 )
+
+[node name="FixedCable" parent="LightPlafonnier" instance=ExtResource( 17 )]
+transform = Transform( -1.74846e-07, 0.3, 0, -4, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -0.662542, -0.764972 )
+visible = false
 
 [node name="PipeSystem" type="Spatial" parent="."]
 
@@ -219,6 +220,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89814, 2.70325, -2.50229 )
 
 [node name="Leak2" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.982189, -0.187896, 0, -0.187896, 0.982189, 0, 0, 0, 1, 0.701108, 1.04797, -2.47246 )
+
+[node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
 
 [connection signal="select" from="ToolHookFork/Wrench" to="." method="_on_tool_select"]
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
