@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Models/Light/cable_broken.glb" type="PackedScene" id=1]
+
+[node name="BrokenCable" type="Spatial"]
+
+[node name="cable_broken" parent="." instance=ExtResource( 1 )]
+transform = Transform( -8.74228e-09, 0.2, -8.74228e-09, 0, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 3.82137e-16, 0, 0, 0 )
