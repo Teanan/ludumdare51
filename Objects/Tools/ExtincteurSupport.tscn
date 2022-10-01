@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Models/Tools/extincteur_support.glb" type="PackedScene" id=1]
+
+[node name="ExtincteurSupport" type="Spatial"]
+
+[node name="extincteur_support" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.072, 0, 0, 0, -3.14722e-09, 0.072, 0, -0.072, -3.14722e-09, 0, 0, 0.36 )

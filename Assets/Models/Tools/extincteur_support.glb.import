@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/extincteur_support.glb-bfbbb31eb44753e88d8406e5fa91ea6f.scn"
+path="res://.import/extincteur_support.glb-7cb757ee5765683799a39d2ac78f49a4.scn"
 
 [deps]
 
-source_file="res://Assets/Models/extincteur_support.glb"
-dest_files=[ "res://.import/extincteur_support.glb-bfbbb31eb44753e88d8406e5fa91ea6f.scn" ]
+source_file="res://Assets/Models/Tools/extincteur_support.glb"
+dest_files=[ "res://.import/extincteur_support.glb-7cb757ee5765683799a39d2ac78f49a4.scn" ]
 
 [params]
 
