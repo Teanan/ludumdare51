@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Models/jauge_aiguille.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Models/jauge_color.glb" type="PackedScene" id=2]
+
+[node name="Gauge" type="Spatial"]
+
+[node name="gauge_color" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0.28, 0 )
+
+[node name="gauge_rotation" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135036, 0 )
+
+[node name="gauge_pointer" parent="gauge_rotation" instance=ExtResource( 1 )]
+transform = Transform( 0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.024, 0.16, 0.08 )
