@@ -187,13 +187,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.57898 )
 transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
-transform = Transform( -27.826, 1.13247e-07, 0, -4.20161e-06, -0.75, 0, 0, 0, 0.75, 0, 0.531754, -0.0152583 )
+transform = Transform( -27, 1.13247e-07, 0, -4.07689e-06, -0.75, 0, 0, 0, 0.75, 0, 0.5, 0 )
 
 [node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 12 )]
-transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, -4.48108, 0.711332, -0.0149324 )
+transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, -4.5, 0.68, 0 )
 
 [node name="StraightPipe3" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
-transform = Transform( -3.0598e-07, -0.75, 0, 7, -3.27835e-08, 0, 0, 0, 0.75, -4.48121, 0.701818, -0.0223193 )
+transform = Transform( -1.31134e-07, -0.75, 0, 3, -3.27835e-08, 0, 0, 0, 0.75, -4.5, 0.68, 0 )
 
 [node name="LargeGauge" parent="BoilerAssembly" instance=ExtResource( 16 )]
 transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 1.06656, 0.782642, 0.43021 )
