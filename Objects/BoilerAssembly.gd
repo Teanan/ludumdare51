@@ -10,6 +10,8 @@ const min_temp = 12
 const max_temp = 125
 const max_pressure = 4
 
+var door_opened = false
+
 func _ready():
 	$PressureGauge.CONVERGENCE_SPEED = 100
 
@@ -25,8 +27,23 @@ func _on_BoilerTick_timeout():
 	$Gauge.set_value((temperature - min_temp) * 100 / (max_temp - min_temp))
 	$PressureGauge.set_value(pressure * 100 / (max_pressure))
 
+func add_coal():
+	if door_opened:
+		coal = coal + 10
+		close_door()
+
 func open_door():
+	door_opened = true
 	anim.play("open_door")
 
 func close_door():
+	door_opened = false
 	anim.play_backwards("open_door")
+
+func _on_BoilerAssembly_mouse_entered():
+	if get_parent().hand != null and get_parent().hand.is_in_group("Coal"):
+		open_door()
+
+func _on_BoilerAssembly_mouse_exited():
+	if door_opened:
+		close_door()
