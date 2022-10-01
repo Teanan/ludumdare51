@@ -77,7 +77,7 @@ tracks/1/keys = {
 }
 
 [node name="LightPlafonnier" type="Spatial"]
-transform = Transform( 0.999921, 0.0125355, 0, -0.0125353, 0.999902, 0.00626789, 7.85713e-05, -0.0062674, 0.99998, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="BobbleAnimation" type="AnimationPlayer" parent="."]
