@@ -2,6 +2,7 @@
 
 [ext_resource path="res://Assets/Models/wrench.glb" type="PackedScene" id=1]
 
-[node name="Spatial" type="Spatial"]
+[node name="Wrench" type="Spatial"]
 
 [node name="wrench" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.033, 0, 0, 0, 0.033, 0, 0, 0, 0.033, 0, 0, 0 )
