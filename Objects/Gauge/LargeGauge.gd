@@ -1,8 +1,8 @@
 extends Spatial
 
 
-const MAX_ANGLE_DEG = -90
-const MIN_ANGLE_DEG = 90
+const MAX_ANGLE_DEG = -142
+const MIN_ANGLE_DEG = 142
 
 const MAX_VALUE = 100
 const MIN_VALUE = 0
@@ -30,7 +30,6 @@ func set_value(value):
 func _ready():
 	rotation_node.rotation_degrees.z = MIN_ANGLE_DEG
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	jitterred_target_value = target_value + rand_range(-ALLOWED_JITTER_VALUE, ALLOWED_JITTER_VALUE)
 	if jitterred_target_value < current_value:
