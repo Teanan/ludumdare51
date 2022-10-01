@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.152941, 0.682353, 0.376471, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.368627, 0.447059, 0.686275, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 6 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Handset:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Ring"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Handset:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -12 ), Vector3( 0, 0, 12 ), Vector3( 0, 0, -12 ), Vector3( 0, 0, 12 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="Phone" type="Spatial"]
+
+[node name="Support" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Support"]
+transform = Transform( 0.791755, 0, 0, 0, 1.00344, 0, 0, 0, -0.22187, 0, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
+
+[node name="Handset" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.539127, 0, 0.407593 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Handset"]
+transform = Transform( 0.158463, 0, 0, 0, 0.804676, 0, 0, 0, 0.149724, 0, 0, 0 )
+mesh = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Ring"
+anims/RESET = SubResource( 3 )
+anims/Ring = SubResource( 4 )
