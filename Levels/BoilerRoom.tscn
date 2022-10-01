@@ -60,7 +60,7 @@ mesh = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
 [node name="BoilerAssembly" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.65266 )
 
 [node name="Phone" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.7, -3 )
@@ -81,7 +81,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 1.8
 transform = Transform( -1.09278e-08, 0.25, -1.09278e-08, 0, -1.09278e-08, -0.25, -0.25, -1.09278e-08, 4.77669e-16, 0.0736699, -0.000200033, 0.00571001 )
 
 [node name="LightPlafonnier" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968583, 2.26355, -1.60945 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00448, 2.43671, -1.63224 )
 
 [node name="PipeSystem" type="Spatial" parent="."]
 
@@ -97,6 +97,9 @@ transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="StraightPipe2" parent="PipeSystem/Low" instance=ExtResource( 13 )]
 transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
 
+[node name="AngledPipe2" parent="PipeSystem/Low" instance=ExtResource( 12 )]
+transform = Transform( 3.12511e-08, 0.19247, 0.268058, 0.33, -4.89799e-08, -3.30405e-09, 3.78591e-08, 0.268058, -0.19247, 1.72061, 0.105732, 0.0170113 )
+
 [node name="Mid" type="Spatial" parent="PipeSystem"]
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 2.75, 1.7, -0.5 )
 
@@ -109,11 +112,38 @@ transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="StraightPipe2" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
 
+[node name="StraightPipe3" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+transform = Transform( -8.74227e-08, 0, 0.2, 1.74846e-07, 0.2, 0, -2, 1.74846e-08, -8.74228e-09, 1.96235, 0, 0.436064 )
+
+[node name="AngledPipe2" parent="PipeSystem/Mid" instance=ExtResource( 12 )]
+transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.96344, -0.0481479, 0.479021 )
+
+[node name="StraightPipe4" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.96235, -0.368134, 0.47917 )
+
+[node name="StraightPipe5" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+transform = Transform( -1.1837e-07, 1.77877e-21, 0.2, 2.36741e-07, 0.2, 7.64273e-16, -2.708, 1.74846e-08, -8.74228e-09, 1.81245, 0, 0.51678 )
+
+[node name="AngledPipe3" parent="PipeSystem/Mid" instance=ExtResource( 12 )]
+transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.81354, -0.0481479, 0.559736 )
+
+[node name="StraightPipe6" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.81245, -0.368134, 0.559885 )
+
 [node name="Top" type="Spatial" parent="PipeSystem"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.57898 )
 
 [node name="StraightPipe" parent="PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="StraightPipe2" parent="PipeSystem/Top" instance=ExtResource( 13 )]
+transform = Transform( -27.826, 1.13247e-07, 0, -4.20161e-06, -0.75, 0, 0, 0, 0.75, 0, 0.531754, -0.0152583 )
+
+[node name="AngledPipe" parent="PipeSystem/Top" instance=ExtResource( 12 )]
+transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, -4.48108, 0.711332, -0.0149324 )
+
+[node name="StraightPipe3" parent="PipeSystem/Top" instance=ExtResource( 13 )]
+transform = Transform( -3.0598e-07, -0.75, 0, 7, -3.27835e-08, 0, 0, 0, 0.75, -4.48121, 0.701818, -0.0223193 )
 
 [node name="ExtincteurSupport" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.9, -3 )
@@ -139,7 +169,7 @@ light_energy = 0.01
 shadow_enabled = true
 
 [node name="LargeGauge" parent="." instance=ExtResource( 16 )]
-transform = Transform( 0.594767, 0, -0.803898, 0, 1, 0, 0.803898, 0, 0.594767, 2.09286, 0.82168, -1.79665 )
+transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 2.56656, 0.782642, -2.22245 )
 
 [node name="Events" type="Spatial" parent="."]
 
