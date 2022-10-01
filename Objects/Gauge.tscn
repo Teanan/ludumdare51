@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Models/jauge_aiguille.glb" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Models/jauge_color.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Models/Gauge/jauge_aiguille.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Models/Gauge/jauge_color.glb" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Gauge.gd" type="Script" id=3]
 
 [node name="Gauge" type="Spatial"]

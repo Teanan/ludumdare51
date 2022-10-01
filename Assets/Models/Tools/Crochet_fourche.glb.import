@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Coal_nugget.glb-37ed11408b252f97ffb28f271897f667.scn"
+path="res://.import/Crochet_fourche.glb-e3c4772283e682248004baf7c131728d.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Coal_nugget.glb"
-dest_files=[ "res://.import/Coal_nugget.glb-37ed11408b252f97ffb28f271897f667.scn" ]
+source_file="res://Assets/Models/Tools/Crochet_fourche.glb"
+dest_files=[ "res://.import/Crochet_fourche.glb-e3c4772283e682248004baf7c131728d.scn" ]
 
 [params]
 

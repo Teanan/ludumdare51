@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/wrench.glb-8c0c7226830da23da393bc793b293ecf.scn"
+path="res://.import/Coal_full.glb-1d579f82efa488dae9353632a513cab3.scn"
 
 [deps]
 
-source_file="res://Assets/Models/wrench.glb"
-dest_files=[ "res://.import/wrench.glb-8c0c7226830da23da393bc793b293ecf.scn" ]
+source_file="res://Assets/Models/Coal/Coal_full.glb"
+dest_files=[ "res://.import/Coal_full.glb-1d579f82efa488dae9353632a513cab3.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/light_murale.glb-4d6359f5ec276eac0a026a8bf5b8f985.scn"
+path="res://.import/handle_pressure.glb-ca52eb1ab1110b37f09f230e2459e29a.scn"
 
 [deps]
 
-source_file="res://Assets/Models/light_murale.glb"
-dest_files=[ "res://.import/light_murale.glb-4d6359f5ec276eac0a026a8bf5b8f985.scn" ]
+source_file="res://Assets/Models/Boiler/handle_pressure.glb"
+dest_files=[ "res://.import/handle_pressure.glb-ca52eb1ab1110b37f09f230e2459e29a.scn" ]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets/Models/boiler.glb" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Models/boiler_door.glb" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Models/boiler_shaper.glb" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Models/Boiler/boiler.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Models/Boiler/boiler_door.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Models/Boiler/boiler_shaper.glb" type="PackedScene" id=3]
 [ext_resource path="res://Objects/BoilerAssembly.gd" type="Script" id=4]
 [ext_resource path="res://Objects/Gauge.tscn" type="PackedScene" id=5]
 
@@ -90,6 +90,9 @@ shadow_enabled = true
 autostart = true
 
 [node name="Gauge" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.442, 0.23611 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.238044, 1.4, 0.24 )
+
+[node name="PressureGauge" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.363423, 1.4, 0.24 )
 
 [connection signal="timeout" from="BoilerTick" to="." method="_on_BoilerTick_timeout"]

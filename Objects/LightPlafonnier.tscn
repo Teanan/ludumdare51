@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Models/light_plafonnier.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Models/Light/light_plafonnier.glb" type="PackedScene" id=1]
 [ext_resource path="res://Objects/LightPlafonnier.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Crochet_basic.glb-60175b2b079f9b7fc7e29b8e14932e23.scn"
+path="res://.import/light_murale.glb-8898b08443e6c15c246987488c111285.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Crochet_basic.glb"
-dest_files=[ "res://.import/Crochet_basic.glb-60175b2b079f9b7fc7e29b8e14932e23.scn" ]
+source_file="res://Assets/Models/Light/light_murale.glb"
+dest_files=[ "res://.import/light_murale.glb-8898b08443e6c15c246987488c111285.scn" ]
 
 [params]
 

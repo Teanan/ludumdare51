@@ -8,7 +8,7 @@ const MAX_VALUE = 100
 const MIN_VALUE = 0
 const ALLOWED_JITTER_VALUE = 5
 
-const CONVERGENCE_SPEED = 25
+export (int) var CONVERGENCE_SPEED = 25
 
 var current_value = 0
 var target_value = 50

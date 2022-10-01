@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jauge.png-772fec25bb005eec95a1c191a23edba9.stex"
+path="res://.import/Coal_full.png-105b2d705c91a45151fc54ee5b1f3dcf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Jauge.png"
-dest_files=[ "res://.import/Jauge.png-772fec25bb005eec95a1c191a23edba9.stex" ]
+source_file="res://Assets/Models/Coal/Coal_full.png"
+dest_files=[ "res://.import/Coal_full.png-105b2d705c91a45151fc54ee5b1f3dcf.stex" ]
 
 [params]
 

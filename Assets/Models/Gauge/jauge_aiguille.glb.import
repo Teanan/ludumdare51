@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/handle_pressure.glb-5a6ac2d8fc1caba421443af9377a8549.scn"
+path="res://.import/jauge_aiguille.glb-3bb759132ea11f899912b51ab6fae52d.scn"
 
 [deps]
 
-source_file="res://Assets/Models/handle_pressure.glb"
-dest_files=[ "res://.import/handle_pressure.glb-5a6ac2d8fc1caba421443af9377a8549.scn" ]
+source_file="res://Assets/Models/Gauge/jauge_aiguille.glb"
+dest_files=[ "res://.import/jauge_aiguille.glb-3bb759132ea11f899912b51ab6fae52d.scn" ]
 
 [params]
 

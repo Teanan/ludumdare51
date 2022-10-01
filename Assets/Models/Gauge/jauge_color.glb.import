@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/boiler_door.glb-1fc172a3d4da3ced6d44383e380e634b.scn"
+path="res://.import/jauge_color.glb-6077e6281c711c7ac35bf30ded3824d7.scn"
 
 [deps]
 
-source_file="res://Assets/Models/boiler_door.glb"
-dest_files=[ "res://.import/boiler_door.glb-1fc172a3d4da3ced6d44383e380e634b.scn" ]
+source_file="res://Assets/Models/Gauge/jauge_color.glb"
+dest_files=[ "res://.import/jauge_color.glb-6077e6281c711c7ac35bf30ded3824d7.scn" ]
 
 [params]
 

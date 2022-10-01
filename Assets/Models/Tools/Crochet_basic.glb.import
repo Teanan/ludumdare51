@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/extincteur.glb-c3d59c236acbf1488ccfc4a0d9327d90.scn"
+path="res://.import/Crochet_basic.glb-c4ccd06433043cf8ce61f3b585c0a346.scn"
 
 [deps]
 
-source_file="res://Assets/Models/extincteur.glb"
-dest_files=[ "res://.import/extincteur.glb-c3d59c236acbf1488ccfc4a0d9327d90.scn" ]
+source_file="res://Assets/Models/Tools/Crochet_basic.glb"
+dest_files=[ "res://.import/Crochet_basic.glb-c4ccd06433043cf8ce61f3b585c0a346.scn" ]
 
 [params]
 

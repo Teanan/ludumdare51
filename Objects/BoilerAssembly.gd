@@ -13,6 +13,7 @@ const max_pressure = 4
 func _ready():
 	# For demo purposes only
 	# TODO : open door when coal nugget approaches
+	$PressureGauge.CONVERGENCE_SPEED = 100
 	while true:
 		open_door()
 		yield(get_tree().create_timer(5),"timeout")
@@ -29,6 +30,7 @@ func _on_BoilerTick_timeout():
 	pressure = clamp(pressure - 0.05, 0, max_pressure)
 	
 	$Gauge.set_value((temperature - min_temp) * 100 / (max_temp - min_temp))
+	$PressureGauge.set_value(pressure * 100 / (max_pressure))
 
 func open_door():
 	anim.play("open_door")

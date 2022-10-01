@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/boiler.glb-30f6b818032fce996df2fd3da8e09010.scn"
+path="res://.import/tuyau_basic.glb-00d5e0367eae7176c468ded9e8353896.scn"
 
 [deps]
 
-source_file="res://Assets/Models/boiler.glb"
-dest_files=[ "res://.import/boiler.glb-30f6b818032fce996df2fd3da8e09010.scn" ]
+source_file="res://Assets/Models/Pipe/tuyau_basic.glb"
+dest_files=[ "res://.import/tuyau_basic.glb-00d5e0367eae7176c468ded9e8353896.scn" ]
 
 [params]
 

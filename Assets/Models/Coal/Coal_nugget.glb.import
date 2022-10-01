@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/jauge_aiguille.glb-32d0d0455b9f565a60307b6e4cfd56db.scn"
+path="res://.import/Coal_nugget.glb-f4e3d83f9b7757474dbaedfedb431075.scn"
 
 [deps]
 
-source_file="res://Assets/Models/jauge_aiguille.glb"
-dest_files=[ "res://.import/jauge_aiguille.glb-32d0d0455b9f565a60307b6e4cfd56db.scn" ]
+source_file="res://Assets/Models/Coal/Coal_nugget.glb"
+dest_files=[ "res://.import/Coal_nugget.glb-f4e3d83f9b7757474dbaedfedb431075.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/phone_base.glb-4e6c9e688206b0c5f9c0365545871065.scn"
+path="res://.import/wrench.glb-9cd15fe746c3f6117e6b7d013b1b9825.scn"
 
 [deps]
 
-source_file="res://Assets/Models/phone_base.glb"
-dest_files=[ "res://.import/phone_base.glb-4e6c9e688206b0c5f9c0365545871065.scn" ]
+source_file="res://Assets/Models/Tools/wrench.glb"
+dest_files=[ "res://.import/wrench.glb-9cd15fe746c3f6117e6b7d013b1b9825.scn" ]
 
 [params]
 

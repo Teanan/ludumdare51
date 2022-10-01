@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Coal_full.glb-c1fbb43484c133b4de341f7ec8109d2f.scn"
+path="res://.import/phone_base.glb-54844ac01155181f8259096a4ddc10af.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Coal_full.glb"
-dest_files=[ "res://.import/Coal_full.glb-c1fbb43484c133b4de341f7ec8109d2f.scn" ]
+source_file="res://Assets/Models/Misc/phone_base.glb"
+dest_files=[ "res://.import/phone_base.glb-54844ac01155181f8259096a4ddc10af.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Crochet_fourche.glb-2998f6bb01cb322fc8c4613db40f3922.scn"
+path="res://.import/boiler_door.glb-2643b8a24895cd46d93def4fef92f841.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Crochet_fourche.glb"
-dest_files=[ "res://.import/Crochet_fourche.glb-2998f6bb01cb322fc8c4613db40f3922.scn" ]
+source_file="res://Assets/Models/Boiler/boiler_door.glb"
+dest_files=[ "res://.import/boiler_door.glb-2643b8a24895cd46d93def4fef92f841.scn" ]
 
 [params]
 

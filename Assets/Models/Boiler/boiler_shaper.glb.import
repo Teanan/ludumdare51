@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/jauge_color.glb-51a0e9b787e864c512eb3d93289c8b77.scn"
+path="res://.import/boiler_shaper.glb-d2e90c7cd2f78ee7d2b27daa4a221d9c.scn"
 
 [deps]
 
-source_file="res://Assets/Models/jauge_color.glb"
-dest_files=[ "res://.import/jauge_color.glb-51a0e9b787e864c512eb3d93289c8b77.scn" ]
+source_file="res://Assets/Models/Boiler/boiler_shaper.glb"
+dest_files=[ "res://.import/boiler_shaper.glb-d2e90c7cd2f78ee7d2b27daa4a221d9c.scn" ]
 
 [params]
 
