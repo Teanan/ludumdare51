@@ -7,13 +7,14 @@
 radius = 3.18
 height = 8.0
 
-[node name="Hammer" type="StaticBody"]
+[node name="Hammer" type="StaticBody" groups=["Hammer", "Tool"]]
 script = ExtResource( 2 )
 
 [node name="hammer" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.16, 0, 0, 0, -6.99382e-09, 0.12, 0, -0.16, -5.24537e-09, 0, 0, 0 )
+transform = Transform( 0.064, 0, 0, 0, -2.79753e-09, 0.064, 0, -0.064, -2.79753e-09, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_Hammer_mouse_entered"]
