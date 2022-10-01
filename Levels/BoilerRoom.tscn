@@ -49,36 +49,42 @@ glow_high_quality = true
 [node name="BoilerRoom" type="Spatial"]
 script = ExtResource( 9 )
 
-[node name="Floor" type="CSGMesh" parent="."]
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="Floor" type="CSGMesh" parent="Walls"]
 mesh = SubResource( 1 )
 
-[node name="BackWall" type="CSGMesh" parent="."]
+[node name="BackWall" type="CSGMesh" parent="Walls"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, -3 )
 mesh = SubResource( 2 )
 
-[node name="RightWall" type="CSGMesh" parent="."]
+[node name="RightWall" type="CSGMesh" parent="Walls"]
 transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 3, 1.5, 0 )
 mesh = SubResource( 3 )
 
-[node name="LeftWall" type="CSGMesh" parent="."]
+[node name="LeftWall" type="CSGMesh" parent="Walls"]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -3, 1.5, 0 )
 mesh = SubResource( 3 )
 
-[node name="Ceiling" type="CSGMesh" parent="."]
+[node name="Ceiling" type="CSGMesh" parent="Walls"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 3, 0 )
 mesh = SubResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
-[node name="BoilerAssembly" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.65266 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
 
-[node name="Phone" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.7, -3 )
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( -0.404721, -0.656069, -0.637004, -0.913844, 0.315342, 0.255831, 0.0330318, 0.685662, -0.72717, 0, 3.99762, 0 )
+light_color = Color( 0.556863, 0.133333, 0.0470588, 1 )
+light_energy = 0.2
 
-[node name="CoalPile" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -2.4, 0, -2.4 )
+[node name="DirectionalLight2" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352907, -0.328795, -0.295931, 0.533839, 0.792111, 0, 3.99762, 0 )
+light_energy = 0.01
+shadow_enabled = true
 
 [node name="LightPlafonnier" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00448, 2.48636, -1.79604 )
@@ -123,87 +129,113 @@ transform = Transform( -8.74228e-07, 0.3, 0, -20, -1.31134e-08, 0, 0, 0, 0.3, -1
 transform = Transform( -1.74846e-07, 0.3, 0, -4, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -0.662542, -0.764972 )
 visible = false
 
-[node name="PipeSystem" type="Spatial" parent="."]
+[node name="BoilerAssembly" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.65266 )
 
-[node name="Low" type="Spatial" parent="PipeSystem"]
+[node name="PipeSystem" type="Spatial" parent="BoilerAssembly"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.65266 )
+
+[node name="Low" type="Spatial" parent="BoilerAssembly/PipeSystem"]
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 2.75, 0.75, -0.5 )
 
-[node name="AngledPipe" parent="PipeSystem/Low" instance=ExtResource( 12 )]
+[node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, 0 )
 
-[node name="StraightPipe" parent="PipeSystem/Low" instance=ExtResource( 13 )]
+[node name="StraightPipe" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 13 )]
 transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="StraightPipe2" parent="PipeSystem/Low" instance=ExtResource( 13 )]
+[node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 13 )]
 transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
 
-[node name="AngledPipe2" parent="PipeSystem/Low" instance=ExtResource( 12 )]
+[node name="AngledPipe2" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 12 )]
 transform = Transform( 3.12511e-08, 0.19247, 0.268058, 0.33, -4.89799e-08, -3.30405e-09, 3.78591e-08, 0.268058, -0.19247, 1.72061, 0.105732, 0.0170113 )
 
-[node name="Mid" type="Spatial" parent="PipeSystem"]
+[node name="Mid" type="Spatial" parent="BoilerAssembly/PipeSystem"]
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 2.75, 1.7, -0.5 )
 
-[node name="AngledPipe" parent="PipeSystem/Mid" instance=ExtResource( 12 )]
+[node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, 0 )
 
-[node name="StraightPipe" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="StraightPipe2" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
 
-[node name="StraightPipe3" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe3" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( -8.74227e-08, 0, 0.2, 1.74846e-07, 0.2, 0, -2, 1.74846e-08, -8.74228e-09, 1.96235, 0, 0.436064 )
 
-[node name="AngledPipe2" parent="PipeSystem/Mid" instance=ExtResource( 12 )]
+[node name="AngledPipe2" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
 transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.96344, -0.0481479, 0.479021 )
 
-[node name="StraightPipe4" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe4" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.96235, -0.368134, 0.47917 )
 
-[node name="StraightPipe5" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe5" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( -1.1837e-07, 1.77877e-21, 0.2, 2.36741e-07, 0.2, 7.64273e-16, -2.708, 1.74846e-08, -8.74228e-09, 1.81245, 0, 0.51678 )
 
-[node name="AngledPipe3" parent="PipeSystem/Mid" instance=ExtResource( 12 )]
+[node name="AngledPipe3" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
 transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.81354, -0.0481479, 0.559736 )
 
-[node name="StraightPipe6" parent="PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe6" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.81245, -0.368134, 0.559885 )
 
-[node name="Top" type="Spatial" parent="PipeSystem"]
+[node name="Top" type="Spatial" parent="BoilerAssembly/PipeSystem"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.57898 )
 
-[node name="StraightPipe" parent="PipeSystem/Top" instance=ExtResource( 13 )]
+[node name="StraightPipe" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="StraightPipe2" parent="PipeSystem/Top" instance=ExtResource( 13 )]
+[node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -27.826, 1.13247e-07, 0, -4.20161e-06, -0.75, 0, 0, 0, 0.75, 0, 0.531754, -0.0152583 )
 
-[node name="AngledPipe" parent="PipeSystem/Top" instance=ExtResource( 12 )]
+[node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 12 )]
 transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, -4.48108, 0.711332, -0.0149324 )
 
-[node name="StraightPipe3" parent="PipeSystem/Top" instance=ExtResource( 13 )]
+[node name="StraightPipe3" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -3.0598e-07, -0.75, 0, 7, -3.27835e-08, 0, 0, 0, 0.75, -4.48121, 0.701818, -0.0223193 )
+
+[node name="LargeGauge" parent="BoilerAssembly" instance=ExtResource( 16 )]
+transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 1.06656, 0.782642, 0.43021 )
+
+[node name="CoalPile" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -2.4, 0, -2.4 )
 
 [node name="Coal" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55944, 1.24902, -2.44872 )
 visible = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 5 )
+[node name="Usables" type="Spatial" parent="."]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( -0.404721, -0.656069, -0.637004, -0.913844, 0.315342, 0.255831, 0.0330318, 0.685662, -0.72717, 0, 3.99762, 0 )
-light_color = Color( 0.556863, 0.133333, 0.0470588, 1 )
-light_energy = 0.2
+[node name="Phone" parent="Usables" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.7, -3 )
 
-[node name="DirectionalLight2" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352907, -0.328795, -0.295931, 0.533839, 0.792111, 0, 3.99762, 0 )
-light_energy = 0.01
-shadow_enabled = true
+[node name="ExtincteurSupport" parent="Usables" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.7, -3 )
 
-[node name="LargeGauge" parent="." instance=ExtResource( 16 )]
-transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 2.56656, 0.782642, -2.22245 )
+[node name="Extinguisher" parent="Usables/ExtincteurSupport" groups=["Extinguisher", "Tool"] instance=ExtResource( 2 )]
+transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-15, -1.31134e-07, -1.14641e-14, 1, 1.19209e-07, -0.1, 0.292811 )
+
+[node name="ToolBoard" parent="Usables" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.8, -3 )
+
+[node name="TapeToolHook" parent="Usables/ToolBoard" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, -0.3, 0.02 )
+
+[node name="Tape" parent="Usables/ToolBoard/TapeToolHook" instance=ExtResource( 6 )]
+transform = Transform( -1.09278e-08, 0.25, -1.09278e-08, 0, -1.09278e-08, -0.25, -0.25, -1.09278e-08, 4.77669e-16, 0.0736699, -0.000200033, 0.00571001 )
+
+[node name="ToolHookForkWrench" parent="Usables/ToolBoard" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0.05 )
+
+[node name="Wrench" parent="Usables/ToolBoard/ToolHookForkWrench" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.15 )
+
+[node name="ToolHookForkHammer" parent="Usables/ToolBoard" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.3, 0.05 )
+
+[node name="Hammer" parent="Usables/ToolBoard/ToolHookForkHammer" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, 0.12 )
 
 [node name="Events" type="Spatial" parent="."]
 
@@ -216,34 +248,7 @@ transform = Transform( -0.982189, -0.187896, 0, -0.187896, 0.982189, 0, 0, 0, 1,
 [node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
 
-[node name="ExtincteurSupport" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.7, -3 )
-
-[node name="Extinguisher" parent="ExtincteurSupport" groups=["Extinguisher", "Tool"] instance=ExtResource( 2 )]
-transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-15, -1.31134e-07, -1.14641e-14, 1, 1.19209e-07, -0.1, 0.292811 )
-
-[node name="ToolBoard" parent="." instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.8, -3 )
-
-[node name="TapeToolHook" parent="ToolBoard" instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, -0.3, 0.02 )
-
-[node name="Tape" parent="ToolBoard/TapeToolHook" instance=ExtResource( 6 )]
-transform = Transform( -1.09278e-08, 0.25, -1.09278e-08, 0, -1.09278e-08, -0.25, -0.25, -1.09278e-08, 4.77669e-16, 0.0736699, -0.000200033, 0.00571001 )
-
-[node name="ToolHookForkWrench" parent="ToolBoard" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0.05 )
-
-[node name="Wrench" parent="ToolBoard/ToolHookForkWrench" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.15 )
-
-[node name="ToolHookForkHammer" parent="ToolBoard" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.3, 0.05 )
-
-[node name="Hammer" parent="ToolBoard/ToolHookForkHammer" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, 0.12 )
-
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
-[connection signal="select" from="ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
-[connection signal="select" from="ToolBoard/ToolHookForkWrench/Wrench" to="." method="_on_tool_select"]
-[connection signal="select" from="ToolBoard/ToolHookForkHammer/Hammer" to="." method="_on_tool_select"]
+[connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
+[connection signal="select" from="Usables/ToolBoard/ToolHookForkWrench/Wrench" to="." method="_on_tool_select"]
+[connection signal="select" from="Usables/ToolBoard/ToolHookForkHammer/Hammer" to="." method="_on_tool_select"]
