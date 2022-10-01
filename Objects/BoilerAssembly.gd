@@ -1,8 +1,8 @@
 extends Spatial
 
-export (float) var temperature = 25
-export (float) var pressure = 1
-export (float) var coal = 0
+export (float) var temperature = 25.0
+export (float) var pressure = 1.0
+export (float) var coal = 0.0
 
 onready var anim = $AnimationPlayer
 
