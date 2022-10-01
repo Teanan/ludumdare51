@@ -28,7 +28,13 @@ func _ready()->void:
 	retranslate()
 	
 
-func show(value:bool)->void:
+func show()->void:
+	old_show(true)
+	
+func hide()->void:
+	old_show(false)
+
+func old_show(value:bool)->void:
 	if !can_show:
 		return
 	MenuEvent.Paused = value
@@ -39,18 +45,18 @@ func show(value:bool)->void:
 
 func _on_Resume_pressed()->void:
 	Game.emit_signal(\"Resume\")
-	show(false)
+	old_show(false)
 
 func _on_Restart_pressed()->void:
 	Game.emit_signal(\"Restart\")
-	show(false)
+	old_show(false)
 
 func _on_Options_pressed()->void:
 	MenuEvent.Options = true
 
 func _on_MainMenu_pressed()->void:
 	Game.emit_signal(\"ChangeScene\", MainMenu)
-	show(false)
+	old_show(false)
 	PauseMenu.can_show = false
 
 func _on_Exit_pressed()->void:
@@ -128,9 +134,7 @@ margin_bottom = 115.0
 size_flags_vertical = 4
 custom_constants/separation = 1
 
-[node name="Resume" parent="Control/MarginContainer/Panel/MarginContainer/VBoxContainer" groups=[
-"Pause",
-] instance=ExtResource( 1 )]
+[node name="Resume" parent="Control/MarginContainer/Panel/MarginContainer/VBoxContainer" groups=["Pause"] instance=ExtResource( 1 )]
 margin_right = 168.0
 text = "Resume"
 

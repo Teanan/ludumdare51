@@ -45,8 +45,8 @@ func _input(event)->void:												#used to get back in menus
 		elif Options:
 			set_options(false)
 			if PauseMenu.can_show:
-				PauseMenu.show(true)
+				PauseMenu.old_show(true)
 		elif Paused:
-			PauseMenu.show(false)
+			PauseMenu.old_show(false)
 		elif PauseMenu.can_show:
-			PauseMenu.show(true)
+			PauseMenu.old_show(true)
