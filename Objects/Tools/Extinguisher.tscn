@@ -4,13 +4,13 @@
 
 [sub_resource type="SphereMesh" id=1]
 
-[node name="Spatial" type="Spatial"]
+[node name="Extinguisher" type="Spatial"]
 
 [node name="extincteur" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0 )
 
-[node name="CPUParticles" type="CPUParticles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87303, 5.84432, -0.0754433 )
+[node name="CPUParticles" type="CPUParticles" parent="extincteur"]
+transform = Transform( 0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 5.10335, 5.82508, 0 )
 lifetime = 0.67
 mesh = SubResource( 1 )
 spread = 26.33
@@ -19,4 +19,3 @@ initial_velocity = 20.0
 linear_accel = -22.0
 scale_amount = 2.15
 scale_amount_random = 0.87
-[node name="Extinguisher" type="Spatial"]
