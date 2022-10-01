@@ -47,10 +47,14 @@ func _on_tool_pickup():
 
 func _on_tool_action_using():
 	if hand != null and hand.is_in_group("Tool"):
+		if hand.has_method("animate"):
+			hand.animate(true)
 		using_tool = true
 
 func _on_tool_action_done():
 	using_tool = false
+	if hand.has_method("animate"):
+		hand.animate(false)
 	if hand.is_in_group("Coal"):
 		$BoilerAssembly.add_coal()
 		$Coal.visible = false
@@ -61,6 +65,8 @@ func _on_tool_action_done():
 	#	hand = null
 
 func _on_tool_cancel():
+	if hand.has_method("animate"):
+		hand.animate(false)
 	if hand.is_in_group("Coal"):
 		$Coal.visible = false
 		hand = null

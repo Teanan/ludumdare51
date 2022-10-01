@@ -185,12 +185,6 @@ transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75
 [node name="StraightPipe3" parent="PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -3.0598e-07, -0.75, 0, 7, -3.27835e-08, 0, 0, 0, 0.75, -4.48121, 0.701818, -0.0223193 )
 
-[node name="ExtincteurSupport" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.7, -3 )
-
-[node name="Extinguisher" parent="ExtincteurSupport" instance=ExtResource( 2 )]
-transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-15, -1.31134e-07, -1.14641e-14, 1, 1.19209e-07, -0.1, 0.292811 )
-
 [node name="Coal" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55944, 1.24902, -2.44872 )
 visible = false
@@ -221,6 +215,12 @@ transform = Transform( -0.982189, -0.187896, 0, -0.187896, 0.982189, 0, 0, 0, 1,
 
 [node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
+
+[node name="ExtincteurSupport" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.7, -3 )
+
+[node name="Extinguisher" parent="ExtincteurSupport" groups=["Extinguisher", "Tool"] instance=ExtResource( 2 )]
+transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-15, -1.31134e-07, -1.14641e-14, 1, 1.19209e-07, -0.1, 0.292811 )
 
 [node name="ToolBoard" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.8, -3 )
