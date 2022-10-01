@@ -9,7 +9,7 @@ const max_temp = 125
 const max_pressure = 4
 
 func _ready():
-	pass
+	$PressureGauge.CONVERGENCE_SPEED = 100
 
 func _on_BoilerTick_timeout():
 	if coal > 0:
@@ -21,3 +21,4 @@ func _on_BoilerTick_timeout():
 	pressure = clamp(pressure - 0.05, 0, max_pressure)
 	
 	$Gauge.set_value((temperature - min_temp) * 100 / (max_temp - min_temp))
+	$PressureGauge.set_value(pressure * 100 / (max_pressure))
