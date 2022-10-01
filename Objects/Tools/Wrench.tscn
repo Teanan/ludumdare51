@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Models/wrench.glb" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Tools/Wrench.gd" type="Script" id=2]
 
-[node name="Wrench" type="Spatial"]
+[sub_resource type="CapsuleShape" id=1]
+radius = 3.0176
+height = 8.13165
+
+[node name="Wrench" type="StaticBody"]
+script = ExtResource( 2 )
 
 [node name="wrench" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.033, 0, 0, 0, 0.033, 0, 0, 0, 0.033, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.033, 0, 0, 0, -1.44248e-09, 0.033, 0, -0.033, -1.44248e-09, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Wrench_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Wrench_mouse_exited"]
