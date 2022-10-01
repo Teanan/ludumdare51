@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var anim = $AnimationPlayer
+onready var anim = $LightAnimation
 onready var random = RandomNumberGenerator.new()
 
 func _ready():

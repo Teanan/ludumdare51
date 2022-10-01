@@ -1,7 +1,7 @@
 extends Spatial
 
 onready var RoomScene = $"../.."
-onready var FixedCable = $"../../LightPlafonnier/FixedCable"
+onready var FixedCable = $"../../PlafonnierElec/FixedCable"
 
 export (String) var ActionTool = "Wrench"
 

@@ -88,47 +88,49 @@ transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352907, -0.32
 light_energy = 0.01
 shadow_enabled = true
 
-[node name="LightPlafonnier" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00448, 2.48636, -1.79604 )
+[node name="PlafonnierElec" type="Spatial" parent="."]
 
-[node name="StraightCable2" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 1.75798, -0.143051, 0, 0.953673, 0.263698, 0, 0, 0, 0.3, -0.151344, 0.246544, 0 )
+[node name="LightPlafonnier" parent="PlafonnierElec" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.004, 2.8, -1.796 )
 
-[node name="StraightCable3" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 1.95239, -0.0650699, 0, 0.433799, 0.292858, 0, 0, 0, 0.3, -0.285601, 0.197723, 0 )
+[node name="StraightCable2" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 1.75798, -0.143051, 0, 0.953673, 0.263698, 0, 0, 0, 0.3, -1.15582, 2.7329, -1.79604 )
 
-[node name="StraightCable4" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 2, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.438037, 0.181504, 0 )
+[node name="StraightCable3" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 1.95239, -0.0650699, 0, 0.433799, 0.292858, 0, 0, 0, 0.3, -1.29008, 2.68408, -1.79604 )
 
-[node name="StraightCable5" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 1.95239, 0.0650699, 0, -0.433799, 0.292858, 0, 0, 0, 0.3, -0.592607, 0.197723, 0 )
+[node name="StraightCable4" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 2, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.44252, 2.66786, -1.79604 )
 
-[node name="StraightCable6" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 1.75798, 0.143051, 0, -0.953673, 0.263698, 0, 0, 0, 0.3, -0.734959, 0.251321, 0 )
+[node name="StraightCable5" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 1.95239, 0.0650699, 0, -0.433799, 0.292858, 0, 0, 0, 0.3, -1.59709, 2.68408, -1.79604 )
 
-[node name="StraightCable7" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 3.22449, -0.262384, -0.465635, 0.953673, 0.263698, 0, 2.04033, -0.166026, 0.123319, -0.98022, 0.297924, -0.132796 )
+[node name="StraightCable6" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 1.75798, 0.143051, 0, -0.953673, 0.263698, 0, 0, 0, 0.3, -1.73944, 2.73768, -1.79604 )
 
-[node name="StraightCable8" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 3.58106, -0.119351, -0.465635, 0.433799, 0.292858, 0, 2.26595, -0.0755206, 0.123319, -1.22647, 0.249103, -0.288616 )
+[node name="StraightCable7" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 3.22449, -0.262384, -0.465635, 0.953673, 0.263698, 0, 2.04033, -0.166026, 0.123319, -1.9847, 2.78428, -1.92884 )
 
-[node name="StraightCable9" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 3.66839, 0, -0.465635, 0, 0.3, 0, 2.32121, 0, 0.123319, -1.50607, 0.232884, -0.465534 )
+[node name="StraightCable8" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 3.58106, -0.119351, -0.465635, 0.433799, 0.292858, 0, 2.26595, -0.0755206, 0.123319, -2.23095, 2.73546, -2.08466 )
 
-[node name="StraightCable10" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 3.58106, 0.119351, -0.465635, -0.433799, 0.292858, 0, 2.26595, 0.0755206, 0.123319, -1.78958, 0.249103, -0.644929 )
+[node name="StraightCable9" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 3.66839, 0, -0.465635, 0, 0.3, 0, 2.32121, 0, 0.123319, -2.51055, 2.71924, -2.26157 )
 
-[node name="StraightCable11" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( 3.22449, 0.262384, -0.465635, -0.953673, 0.263698, 0, 2.04033, 0.166026, 0.123319, -2.05069, 0.302701, -0.810144 )
+[node name="StraightCable10" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 3.58106, 0.119351, -0.465635, -0.433799, 0.292858, 0, 2.26595, 0.0755206, 0.123319, -2.79406, 2.73546, -2.44097 )
 
-[node name="StraightCable12" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( -4.37114e-07, 0.3, 0, -10, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -0.119387, -0.764972 )
+[node name="StraightCable11" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( 3.22449, 0.262384, -0.465635, -0.953673, 0.263698, 0, 2.04033, 0.166026, 0.123319, -3.05517, 2.78906, -2.60618 )
 
-[node name="StraightCable13" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( -8.74228e-07, 0.3, 0, -20, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -1.61924, -0.764972 )
+[node name="StraightCable12" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( -4.37114e-07, 0.3, 0, -10, -1.31134e-08, 0, 0, 0, 0.3, -2.98718, 2.36697, -2.56101 )
 
-[node name="FixedCable" parent="LightPlafonnier" instance=ExtResource( 17 )]
-transform = Transform( -1.74846e-07, 0.3, 0, -4, -1.31134e-08, 0, 0, 0, 0.3, -1.9827, -0.662542, -0.764972 )
+[node name="StraightCable13" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( -8.74228e-07, 0.3, 0, -20, -1.31134e-08, 0, 0, 0, 0.3, -2.98718, 0.86712, -2.56101 )
+
+[node name="FixedCable" parent="PlafonnierElec" instance=ExtResource( 17 )]
+transform = Transform( -1.74846e-07, 0.3, 0, -4, -1.31134e-08, 0, 0, 0, 0.3, -2.98718, 1.82382, -2.56101 )
 visible = false
 
 [node name="BoilerAssembly" parent="." instance=ExtResource( 1 )]
