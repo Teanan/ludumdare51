@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Crochet_fourche.glb-2998f6bb01cb322fc8c4613db40f3922.scn"
+path="res://.import/phone_handle.glb-3645ad23b570e668e67748f28cdd9a33.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Crochet_fourche.glb"
-dest_files=[ "res://.import/Crochet_fourche.glb-2998f6bb01cb322fc8c4613db40f3922.scn" ]
+source_file="res://Assets/Models/Misc/phone_handle.glb"
+dest_files=[ "res://.import/phone_handle.glb-3645ad23b570e668e67748f28cdd9a33.scn" ]
 
 [params]
 

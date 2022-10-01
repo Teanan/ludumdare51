@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tuyau_basic.glb-bbe67c22cdf023cad33422a396296f11.scn"
+path="res://.import/extincteur.glb-be8530b5bcdd204a0064bf05c3b4b1a7.scn"
 
 [deps]
 
-source_file="res://Assets/Models/tuyau_basic.glb"
-dest_files=[ "res://.import/tuyau_basic.glb-bbe67c22cdf023cad33422a396296f11.scn" ]
+source_file="res://Assets/Models/Tools/extincteur.glb"
+dest_files=[ "res://.import/extincteur.glb-be8530b5bcdd204a0064bf05c3b4b1a7.scn" ]
 
 [params]
 

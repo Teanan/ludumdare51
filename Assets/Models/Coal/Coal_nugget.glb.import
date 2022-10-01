@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/jauge_color.glb-51a0e9b787e864c512eb3d93289c8b77.scn"
+path="res://.import/Coal_nugget.glb-f4e3d83f9b7757474dbaedfedb431075.scn"
 
 [deps]
 
-source_file="res://Assets/Models/jauge_color.glb"
-dest_files=[ "res://.import/jauge_color.glb-51a0e9b787e864c512eb3d93289c8b77.scn" ]
+source_file="res://Assets/Models/Coal/Coal_nugget.glb"
+dest_files=[ "res://.import/Coal_nugget.glb-f4e3d83f9b7757474dbaedfedb431075.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/light_plafonnier.glb-1b58f00a30de7c2716d0e7c59dc7ab42.scn"
+path="res://.import/light_plafonnier.glb-03007e829644e7e930e5261d886bbd0f.scn"
 
 [deps]
 
-source_file="res://Assets/Models/light_plafonnier.glb"
-dest_files=[ "res://.import/light_plafonnier.glb-1b58f00a30de7c2716d0e7c59dc7ab42.scn" ]
+source_file="res://Assets/Models/Light/light_plafonnier.glb"
+dest_files=[ "res://.import/light_plafonnier.glb-03007e829644e7e930e5261d886bbd0f.scn" ]
 
 [params]
 

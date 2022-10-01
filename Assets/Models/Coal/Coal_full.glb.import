@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/boiler.glb-30f6b818032fce996df2fd3da8e09010.scn"
+path="res://.import/Coal_full.glb-1d579f82efa488dae9353632a513cab3.scn"
 
 [deps]
 
-source_file="res://Assets/Models/boiler.glb"
-dest_files=[ "res://.import/boiler.glb-30f6b818032fce996df2fd3da8e09010.scn" ]
+source_file="res://Assets/Models/Coal/Coal_full.glb"
+dest_files=[ "res://.import/Coal_full.glb-1d579f82efa488dae9353632a513cab3.scn" ]
 
 [params]
 

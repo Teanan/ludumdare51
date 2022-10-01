@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow_light_emission.png-3411e279d04d993c81a92a421593f54d.stex"
+path="res://.import/yellow_light_emission.png-78167ccdd08b4ed1cd0086b5f2d6730a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/yellow_light_emission.png"
-dest_files=[ "res://.import/yellow_light_emission.png-3411e279d04d993c81a92a421593f54d.stex" ]
+source_file="res://Assets/Models/Light/yellow_light_emission.png"
+dest_files=[ "res://.import/yellow_light_emission.png-78167ccdd08b4ed1cd0086b5f2d6730a.stex" ]
 
 [params]
 

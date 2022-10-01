@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/handle_pressure.glb-5a6ac2d8fc1caba421443af9377a8549.scn"
+path="res://.import/handle_pressure.glb-ca52eb1ab1110b37f09f230e2459e29a.scn"
 
 [deps]
 
-source_file="res://Assets/Models/handle_pressure.glb"
-dest_files=[ "res://.import/handle_pressure.glb-5a6ac2d8fc1caba421443af9377a8549.scn" ]
+source_file="res://Assets/Models/Boiler/handle_pressure.glb"
+dest_files=[ "res://.import/handle_pressure.glb-ca52eb1ab1110b37f09f230e2459e29a.scn" ]
 
 [params]
 

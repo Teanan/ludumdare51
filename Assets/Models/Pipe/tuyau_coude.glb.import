@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Crochet_basic.glb-60175b2b079f9b7fc7e29b8e14932e23.scn"
+path="res://.import/tuyau_coude.glb-70e3e88b54b83dc45bb024186e2c0f67.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Crochet_basic.glb"
-dest_files=[ "res://.import/Crochet_basic.glb-60175b2b079f9b7fc7e29b8e14932e23.scn" ]
+source_file="res://Assets/Models/Pipe/tuyau_coude.glb"
+dest_files=[ "res://.import/tuyau_coude.glb-70e3e88b54b83dc45bb024186e2c0f67.scn" ]
 
 [params]
 

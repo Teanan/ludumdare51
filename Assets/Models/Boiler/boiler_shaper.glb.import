@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/extincteur.glb-c3d59c236acbf1488ccfc4a0d9327d90.scn"
+path="res://.import/boiler_shaper.glb-d2e90c7cd2f78ee7d2b27daa4a221d9c.scn"
 
 [deps]
 
-source_file="res://Assets/Models/extincteur.glb"
-dest_files=[ "res://.import/extincteur.glb-c3d59c236acbf1488ccfc4a0d9327d90.scn" ]
+source_file="res://Assets/Models/Boiler/boiler_shaper.glb"
+dest_files=[ "res://.import/boiler_shaper.glb-d2e90c7cd2f78ee7d2b27daa4a221d9c.scn" ]
 
 [params]
 

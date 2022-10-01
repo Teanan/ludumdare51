@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/wrench.glb-8c0c7226830da23da393bc793b293ecf.scn"
+path="res://.import/boiler.glb-2bb44f6f17313d97d0b7c5f186e5291d.scn"
 
 [deps]
 
-source_file="res://Assets/Models/wrench.glb"
-dest_files=[ "res://.import/wrench.glb-8c0c7226830da23da393bc793b293ecf.scn" ]
+source_file="res://Assets/Models/Boiler/boiler.glb"
+dest_files=[ "res://.import/boiler.glb-2bb44f6f17313d97d0b7c5f186e5291d.scn" ]
 
 [params]
 

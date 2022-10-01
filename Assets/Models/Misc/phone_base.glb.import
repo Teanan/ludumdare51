@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tuyau_coude.glb-90739c3be00a164352e39504bfb7dcdc.scn"
+path="res://.import/phone_base.glb-54844ac01155181f8259096a4ddc10af.scn"
 
 [deps]
 
-source_file="res://Assets/Models/tuyau_coude.glb"
-dest_files=[ "res://.import/tuyau_coude.glb-90739c3be00a164352e39504bfb7dcdc.scn" ]
+source_file="res://Assets/Models/Misc/phone_base.glb"
+dest_files=[ "res://.import/phone_base.glb-54844ac01155181f8259096a4ddc10af.scn" ]
 
 [params]
 
