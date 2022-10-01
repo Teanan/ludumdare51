@@ -1,7 +1,7 @@
 extends Spatial
 
 # Items pickup
-const pickup_dist = 2.5
+const pickup_dist = 2
 var hover: Spatial = null
 var hand: Spatial = null
 var hand_origin: Vector3
@@ -11,6 +11,7 @@ var using_tool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Events/Leak2.trigger_event()
+	$Events/BrokenCable.trigger_event()
 	pass # Replace with function body.
 
 
@@ -42,6 +43,7 @@ func _on_tool_pickup():
 		# pickup highlighted item
 		hand = hover
 		hand_origin = hover.global_transform.origin
+		hand.input_ray_pickable = false
 
 func _on_tool_action_using():
 	if hand != null and hand.is_in_group("Tool"):
@@ -66,6 +68,7 @@ func _on_tool_cancel():
 		# return picked up item to origin
 		hand.global_transform.origin = hand_origin
 		hand.scale = Vector3(1, 1, 1)
+		hand.input_ray_pickable = true
 		hand = null
 		hover = null
 	
