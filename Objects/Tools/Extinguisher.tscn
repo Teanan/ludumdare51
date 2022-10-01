@@ -7,6 +7,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="extincteur" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0 )
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87303, 5.84432, -0.0754433 )
@@ -18,3 +19,4 @@ initial_velocity = 20.0
 linear_accel = -22.0
 scale_amount = 2.15
 scale_amount_random = 0.87
+[node name="Extinguisher" type="Spatial"]

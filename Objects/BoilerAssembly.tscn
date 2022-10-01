@@ -1,7 +1,61 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Models/boiler.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Models/boiler_door.glb" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("boiler_door:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.819491, 0.24808 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("boiler_door:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "open_door"
+tracks/0/type = "value"
+tracks/0/path = NodePath("boiler_door:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.819491, 0.24808 ), Vector3( 0, 1.56064, 0.24808 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("boiler_door:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
 
 [node name="BoilerAssembly" type="Spatial"]
 
@@ -10,3 +64,7 @@ transform = Transform( 0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 1.19251, 0 )
 
 [node name="boiler_door" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0.819491, 0.24808 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/open_door = SubResource( 2 )
