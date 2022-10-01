@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Levels/BoilerAssembly.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
