@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Models/Boiler/boiler_door.glb" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Models/Boiler/boiler_shaper.glb" type="PackedScene" id=3]
 [ext_resource path="res://Objects/BoilerAssembly.gd" type="Script" id=4]
-[ext_resource path="res://Objects/Gauge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Gauge/Gauge.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=6]
 length = 0.001

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Objects/Pipe/StraightPipe.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/Tools/ExtincteurSupport.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/Coal.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Gauge/LargeGauge.tscn" type="PackedScene" id=16]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -121,6 +122,9 @@ transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-1
 [node name="Coal" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55944, 1.24902, -2.44872 )
 visible = false
+
+[node name="LargeGauge" parent="." instance=ExtResource( 16 )]
+transform = Transform( 0.594767, 0, -0.803898, 0, 1, 0, 0.803898, 0, 0.594767, 2.09286, 0.82168, -1.79665 )
 
 [connection signal="select" from="ToolHookFork/Wrench" to="." method="_on_tool_select"]
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
