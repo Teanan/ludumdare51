@@ -30,6 +30,15 @@ size = Vector2( 6, 3 )
 size = Vector2( 6, 6 )
 
 [sub_resource type="Environment" id=5]
+glow_enabled = true
+glow_intensity = 1.91
+glow_strength = 0.85
+glow_bloom = 1.0
+glow_blend_mode = 1
+glow_hdr_threshold = 1.04
+glow_hdr_luminance_cap = 13.3
+glow_hdr_scale = 2.11
+glow_high_quality = true
 
 [node name="BoilerRoom" type="Spatial"]
 script = ExtResource( 9 )
