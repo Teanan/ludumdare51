@@ -11,14 +11,7 @@ const max_temp = 125
 const max_pressure = 4
 
 func _ready():
-	# For demo purposes only
-	# TODO : open door when coal nugget approaches
 	$PressureGauge.CONVERGENCE_SPEED = 100
-	while true:
-		open_door()
-		yield(get_tree().create_timer(5),"timeout")
-		close_door()
-		yield(get_tree().create_timer(5),"timeout")
 
 func _on_BoilerTick_timeout():
 	if coal > 0:
