@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -27,6 +27,8 @@ size = Vector2( 6, 3 )
 
 [sub_resource type="PlaneMesh" id=4]
 size = Vector2( 6, 6 )
+
+[sub_resource type="Environment" id=5]
 
 [node name="BoilerRoom" type="Spatial"]
 script = ExtResource( 9 )
@@ -75,7 +77,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 1.8
 transform = Transform( -1.09278e-08, 0.25, -1.09278e-08, 0, -1.09278e-08, -0.25, -0.25, -1.09278e-08, 4.77669e-16, 0.0736699, -0.000200033, 0.00571001 )
 
 [node name="LightPlafonnier" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29229, -2.20365 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968583, 2.26355, -1.60945 )
 
 [node name="PipeSystem" type="Spatial" parent="."]
 
@@ -121,6 +123,13 @@ transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-1
 [node name="Coal" parent="." instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55944, 1.24902, -2.44872 )
 visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.929988, 0, 0.367589, 0, 1, 0, -0.367589, 0, 0.929988, 1.19294, 0.820763, 2.17492 )
+light_energy = 0.08
 
 [connection signal="select" from="ToolHookFork/Wrench" to="." method="_on_tool_select"]
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]

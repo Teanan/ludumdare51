@@ -7,34 +7,34 @@
 resource_name = "Blink"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("light_plafonnier/SpotLight:light_energy")
+tracks/0/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 1.0, 0.0, 1.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("light_plafonnier/OmniLight:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0.7, 0.0, 0.7 ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("light_plafonnier/SpotLight:light_energy")
+tracks/0/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -43,10 +43,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_enabled")
+tracks/1/path = NodePath("light_plafonnier/OmniLight:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -55,7 +55,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 0.7 ]
 }
 
 [node name="LightPlafonnier" type="Spatial"]
@@ -64,11 +64,11 @@ script = ExtResource( 2 )
 [node name="light_plafonnier" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0 )
 
-[node name="SpotLight" type="SpotLight" parent="light_plafonnier"]
-transform = Transform( 25, 0, 0, 0, 0.199839, 24.9992, 0, -24.9992, 0.199839, 0, -2.95424, 0 )
-light_color = Color( 0.921569, 0.917647, 0.54902, 1 )
-spot_range = 5.08841
-spot_angle = 39.4128
+[node name="OmniLight" type="OmniLight" parent="light_plafonnier"]
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 0, -4.20491, 0 )
+light_color = Color( 0.937255, 0.909804, 0.698039, 1 )
+light_energy = 0.7
+shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Blink = SubResource( 1 )
