@@ -7,7 +7,7 @@
 radius = 3.0176
 height = 8.13165
 
-[node name="Wrench" type="StaticBody"]
+[node name="Wrench" type="StaticBody" groups=["Tool", "Wrench"]]
 script = ExtResource( 2 )
 
 [node name="wrench" parent="." instance=ExtResource( 1 )]

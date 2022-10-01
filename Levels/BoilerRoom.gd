@@ -6,8 +6,11 @@ var hover: Spatial = null
 var hand: Spatial = null
 var hand_origin: Vector3
 
+var using_tool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Events/Leak2.trigger_event()
 	pass # Replace with function body.
 
 
@@ -20,9 +23,11 @@ func _input(event):
 		hand.global_transform.origin = camera.project_position(event.position, pickup_dist)
 
 func _process(delta):
+	if Input.is_action_just_pressed("Action"):
+		_on_tool_action_using()
 	if Input.is_action_just_released("Action"):
 		if hand != null:
-			_on_tool_action()
+			_on_tool_action_done()
 		elif hover != null:
 			_on_tool_pickup()
 	if Input.is_action_just_released("Cancel"):
@@ -38,15 +43,20 @@ func _on_tool_pickup():
 		hand = hover
 		hand_origin = hover.global_transform.origin
 
-func _on_tool_action():
+func _on_tool_action_using():
+	if hand != null and hand.is_in_group("Tool"):
+		using_tool = true
+
+func _on_tool_action_done():
+	using_tool = false
 	if hand.is_in_group("Coal"):
 		$BoilerAssembly.add_coal()
 		$Coal.visible = false
 		hand = null
-	else:
-		# place item
-		hand.global_transform.origin.z = hand_origin.z
-		hand = null
+	#else:
+	#	# place item
+	#	hand.global_transform.origin.z = hand_origin.z
+	#	hand = null
 
 func _on_tool_cancel():
 	if hand.is_in_group("Coal"):

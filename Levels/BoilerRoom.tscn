@@ -3,7 +3,7 @@
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Tools/Wrench.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Water.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Events/Leak.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Phone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Tools/Tape.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Tools/ToolHook.tscn" type="PackedScene" id=7]
@@ -112,9 +112,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.5 )
 [node name="StraightPipe" parent="PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="Water" parent="PipeSystem/Top" instance=ExtResource( 4 )]
-transform = Transform( 0.573576, 0, -0.819152, 0, 1, 0, 0.819152, 0, 0.573576, 0.1, 0, 0.1 )
-
 [node name="ExtincteurSupport" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.9, -3 )
 
@@ -134,6 +131,14 @@ light_energy = 0.08
 
 [node name="LargeGauge" parent="." instance=ExtResource( 16 )]
 transform = Transform( 0.594767, 0, -0.803898, 0, 1, 0, 0.803898, 0, 0.594767, 2.09286, 0.82168, -1.79665 )
+
+[node name="Events" type="Spatial" parent="."]
+
+[node name="Leak" parent="Events" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89814, 2.70325, -2.50229 )
+
+[node name="Leak2" parent="Events" instance=ExtResource( 4 )]
+transform = Transform( -0.982189, -0.187896, 0, -0.187896, 0.982189, 0, 0, 0, 1, 0.701108, 1.04797, -2.47246 )
 
 [connection signal="select" from="ToolHookFork/Wrench" to="." method="_on_tool_select"]
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
