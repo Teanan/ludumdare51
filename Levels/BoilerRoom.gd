@@ -7,7 +7,7 @@ var hand: Spatial = null
 var hand_origin: Vector3
 
 var using_tool = false
-var game_over = false
+var is_game_over = false
 
 var last_event = null
 
@@ -38,17 +38,18 @@ func _input(event):
 		hand.global_transform.origin = camera.project_position(event.position, pickup_dist)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("Action"):
+	if Input.is_action_just_pressed("Action") and not is_game_over:
 		_on_tool_action_using()
-	if Input.is_action_just_released("Action"):
+	if Input.is_action_just_released("Action") and not is_game_over:
 		if hand != null:
 			_on_tool_action_done()
 		elif hover != null:
 			_on_tool_pickup()
 	if Input.is_action_just_released("Cancel"):
-		if game_over:
-			Game.emit_signal("ChangeScene", "res://MainMenu/MainMenu.tscn")
-		if hand != null:
+		if is_game_over:
+			if not $Usables/Phone/Decrocher.is_playing():
+				Game.emit_signal("ChangeScene", "res://MainMenu/BackgroundMainMenu.tscn")
+		elif hand != null:
 			_on_tool_cancel()
 
 func _on_tool_pickup():
@@ -108,6 +109,8 @@ func _on_tool_cancel():
 #	pass
 
 func _on_tool_select(item: Spatial):
+	if is_game_over:
+		pass
 	if hover != null:
 		hover.scale = Vector3(1, 1, 1)
 	hover = item
@@ -115,7 +118,7 @@ func _on_tool_select(item: Spatial):
 		hover.scale = Vector3(1.1, 1.1, 1.1)
 
 func _on_EventTimer_timeout():
-	if game_over:
+	if is_game_over:
 		pass
 	var pool = EVENTS_POOL
 
@@ -123,16 +126,17 @@ func _on_EventTimer_timeout():
 	if last_event != null:
 		pool.erase(last_event)
 
-	var rand_index:int = randi() % pool.size()
-	var event = pool[rand_index]
+	if not pool.empty():
+		var rand_index:int = randi() % pool.size()
+		var event = pool[rand_index]
 
-	last_event = event
-	event.trigger_event()
+		last_event = event
+		event.trigger_event()
 	
 
 func game_over():
-	if not game_over :
-		game_over = true
+	if not is_game_over :
+		is_game_over = true
 		var phone = $Usables/Phone
 		phone.clear_all_dialogue()
 		phone.add_dialogue(["\nWhat is this mess!\nAre you unable to take care of a simple boiler?\nYOU'RE FIRED!"])

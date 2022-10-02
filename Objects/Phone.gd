@@ -70,6 +70,7 @@ func _on_Ringing_animation_finished(anim_name):
 		emit_signal("dialog_completed", false)
 		ringing = false
 		nbr_rang = 0
+		waiting_calls.pop_front()
 		queue_next()
 	else:
 		print(anim_name + " : " + str(nbr_rang))
