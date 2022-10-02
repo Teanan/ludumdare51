@@ -1,12 +1,12 @@
 extends Spatial
 
+onready var anim = $AnimationPlayer
+
 func start_alarm():
-	$AnimationPlayer.play("alarm")
-	$OmniLight.visible = true
+	anim.play("alarm")
 
 func stop_alarm():
-	$AnimationPlayer.play("RESET")
-	$OmniLight.visible = false
+	anim.play("RESET")
 
 func _ready():
 	pass
