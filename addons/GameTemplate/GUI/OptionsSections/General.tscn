@@ -16,9 +16,6 @@ margin_right = 312.0
 margin_bottom = 172.0
 custom_constants/separation = 1
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 304.0
@@ -223,9 +220,7 @@ margin_right = 38.0
 margin_bottom = 19.0
 size_flags_horizontal = 3
 
-[node name="Back" parent="MarginContainer/VBoxContainer" groups=[
-"General",
-] instance=ExtResource( 9 )]
+[node name="Back" parent="MarginContainer/VBoxContainer" groups=["General"] instance=ExtResource( 9 )]
 margin_left = 39.0
 margin_right = 77.0
 text = "Back"

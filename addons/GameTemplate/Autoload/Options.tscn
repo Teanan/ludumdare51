@@ -20,7 +20,7 @@ func on_show_options(value:bool)->void:
 "
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+bg_color = Color( 0.0941176, 0.0784314, 0.145098, 0 )
 corner_detail = 1
 
 [node name="Options" type="Node"]
@@ -29,15 +29,15 @@ script = SubResource( 1 )
 [node name="OptionsMenu" type="CanvasLayer" parent="."]
 pause_mode = 2
 layer = 20
+offset = Vector2( 50, 25 )
+scale = Vector2( 0.75, 0.75 )
+transform = Transform2D( 0.75, 0, 0, 0.75, 50, 25 )
 
 [node name="BG" type="Panel" parent="OptionsMenu"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Margin" type="MarginContainer" parent="OptionsMenu/BG"]
 anchor_right = 1.0
