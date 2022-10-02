@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Assets/Models/Textures/Floor.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Models/Textures/Ceilling.png" type="Texture" id=26]
 [ext_resource path="res://Objects/Alarm.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Objects/PV.tscn" type="PackedScene" id=28]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -308,6 +309,9 @@ transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.
 
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.83113 )
+
+[node name="PV" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
