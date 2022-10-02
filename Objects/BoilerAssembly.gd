@@ -39,6 +39,7 @@ func _on_BoilerTick_timeout():
 
 func release_pressure():
 	pressure = 0
+	$boiler/Handle.animate(true)
 
 func add_coal():
 	if door_opened:

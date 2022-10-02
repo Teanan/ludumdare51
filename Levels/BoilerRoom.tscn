@@ -201,6 +201,9 @@ transform = Transform( -1.31134e-07, -0.75, 0, 3, -3.27835e-08, 0, 0, 0, 0.75, -
 [node name="LargeGauge" parent="Boilerco" instance=ExtResource( 16 )]
 transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 2.567, 0.783, -2.1 )
 
+[node name="ToolIcon" parent="Boilerco/LargeGauge" index="2"]
+transform = Transform( 0.341935, 0.203739, -0.039647, -0.206791, 0.340967, -0.0312966, 0.0178552, 0.04725, 0.396798, 0.283183, 0.656452, 0.453961 )
+
 [node name="AngledPipe2" parent="Boilerco/LargeGauge" instance=ExtResource( 12 )]
 transform = Transform( -0.25577, 0.042137, -0.320877, 0.105278, 0.397576, -0.0317073, 0.30603, -0.101554, -0.257271, 0.061684, -0.0521288, -0.0607004 )
 
@@ -288,6 +291,7 @@ transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkHammer/Hammer" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/BucketMop/Mop" to="." method="_on_tool_select"]
 
+[editable path="Boilerco/LargeGauge"]
 [editable path="Events/BrokenCable"]
 [editable path="Events/Leak"]
 [editable path="Events/Leak2"]
