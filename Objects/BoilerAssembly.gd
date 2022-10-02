@@ -12,11 +12,14 @@ onready var PV = $"../../PV"
 
 const min_temp = 12
 const max_temp = 125
+const min_pressure = 0
 const max_pressure = 4
 
 const MAX_FIRE_COAL_RATIO = 50
 const MIN_FIRE_SCALE = Vector3(1, 1, 2.6)
 const MAX_FIRE_SCALE = Vector3(8, 2.3, 2.6)
+
+const MAX_PARTICULES_AMOUNT = 200
 
 var door_opened = false
 
@@ -48,11 +51,14 @@ func scale_fire():
 	var coal_ratio = min(coal, MAX_FIRE_COAL_RATIO)  / MAX_FIRE_COAL_RATIO
 	var dest_scale = MIN_FIRE_SCALE.linear_interpolate(MAX_FIRE_SCALE, coal_ratio)
 	fire_particles.scale = old_scale + (dest_scale - old_scale) * 0.3
-	
+
 
 func release_pressure():
-	pressure = 0
+	print(pressure)
 	$boiler/Handle.animate(true)
+	$Exhaust/CPUParticles.amount = clamp((MAX_PARTICULES_AMOUNT * pressure) / max_pressure, 1, MAX_PARTICULES_AMOUNT)
+	$Exhaust/CPUParticles.emitting = true
+	pressure = min_pressure
 
 func add_coal():
 	if door_opened:
