@@ -48,6 +48,7 @@ func _on_phone_pickup():
 
 func _on_phone_hang():
 	$Decrocher.play("Raccrocher")
+	$Voice.stop()
 	picked_up = false
 	emit_signal("dialog_completed", dialog_popup.is_current_dialog_finished())
 	if not waiting_calls.empty():
@@ -80,4 +81,5 @@ func _on_Ringing_animation_finished(anim_name):
 
 func _on_Decrocher_animation_finished(anim_name):
 	if anim_name == "Décrocher":
+		$Voice.play()
 		dialog_popup.display_next()
