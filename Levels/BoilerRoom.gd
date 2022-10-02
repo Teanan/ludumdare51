@@ -20,7 +20,7 @@ func _ready():
 func _input(event):
 	var camera = $Camera
 
-	if hand != null:
+	if hand != null and not hand.is_in_group("Handset"):
 		# move picked up item
 		hand.visible = true
 		hand.global_transform.origin = camera.project_position(event.position, pickup_dist)
@@ -43,6 +43,9 @@ func _on_tool_pickup():
 		hand = $Coal
 	elif hover.is_in_group("PressureHandle"):
 		$Boilerco/BoilerAssembly.release_pressure()
+	elif hover.is_in_group("Handset"):
+		hand = hover
+		$Usables/Phone._on_phone_pickup()
 	else:
 		# pickup highlighted item
 		hand = hover
@@ -73,6 +76,9 @@ func _on_tool_cancel():
 		hand.animate(false)
 	if hand.is_in_group("Coal"):
 		$Coal.visible = false
+		hand = null
+	elif hand.is_in_group("Handset"):
+		$Usables/Phone._on_phone_hang()
 		hand = null
 	else:
 		# return picked up item to origin

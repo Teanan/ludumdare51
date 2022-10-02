@@ -310,6 +310,7 @@ transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.83113 )
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
+[connection signal="select" from="Usables/Phone" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/TapeToolHook/Tape" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkWrench/Wrench" to="." method="_on_tool_select"]
