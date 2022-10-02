@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/StraightCable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/PV.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.0509804, 0.0431373, 0.192157, 1 )
@@ -39,6 +40,7 @@ albedo_texture = SubResource( 5 )
 [sub_resource type="CubeMesh" id=9]
 
 [node name="PV" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 75, 14 )

@@ -308,7 +308,7 @@ ActionTool = "Wrench"
 transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.0957325, -0.394804, -0.0411593, 0.0493521, 0.256301, 0.210589, -0.12236 )
 
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.83113 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )
 
 [node name="PV" parent="." instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
