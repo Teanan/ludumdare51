@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Models/Light/light_murale.glb" type="PackedScene" id=1]
+
+[node name="Alarm" type="Spatial"]
+
+[node name="light_murale" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.03, 0, 0, 0 )
