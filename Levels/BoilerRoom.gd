@@ -14,8 +14,8 @@ func _ready():
 	$Events/Leak2.trigger_event()
 	$Events/LeakBoiler.trigger_event()
 	$Events/BrokenCable.trigger_event()
-	pass # Replace with function body.
-
+	
+	$Boilerco/BoilerAssembly/boiler/Handle.connect("select", self, "_on_tool_select")
 
 func _input(event):
 	var camera = $Camera
@@ -41,6 +41,8 @@ func _on_tool_pickup():
 	if hover.is_in_group("CoalPile"):
 		# spawn coal
 		hand = $Coal
+	elif hover.is_in_group("PressureHandle"):
+		$Boilerco/BoilerAssembly.release_pressure()
 	else:
 		# pickup highlighted item
 		hand = hover
