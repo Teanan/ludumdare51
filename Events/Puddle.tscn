@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Events/Puddle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/ToolIcon.tscn" type="PackedScene" id=3]
@@ -6,6 +6,17 @@
 [sub_resource type="CapsuleShape" id=4]
 radius = 0.896732
 height = 4.14684
+
+[sub_resource type="Animation" id=5]
+resource_name = "RaisingPuddle"
+length = 2.0
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Water")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, -0.4, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
 [sub_resource type="CapsuleMesh" id=2]
 
@@ -30,9 +41,16 @@ wait_time = 2.0
 [node name="ToolIcon" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 
-[node name="Water" type="MeshInstance" parent="."]
+[node name="RaisingWater" type="AnimationPlayer" parent="."]
+anims/RaisingPuddle = SubResource( 5 )
+
+[node name="Water" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0 )
+
+[node name="Water" type="MeshInstance" parent="Water"]
 transform = Transform( -9.99478e-08, 0, -2.28654, 0, 1, 0, 1.438, 0, -6.28569e-08, 0.136224, -0.912965, 0 )
 mesh = SubResource( 2 )
+skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_Leak_mouse_entered"]

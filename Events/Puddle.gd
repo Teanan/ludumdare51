@@ -2,6 +2,7 @@ extends Spatial
 
 onready var RoomScene = $"../.."
 onready var PV = $"../../PV"
+onready var Water = $Water/Water
 
 export (String) var ActionTool = "Mop"
 
@@ -17,19 +18,20 @@ func _ready():
 func trigger_event():
 	progress = 0
 	self.input_ray_pickable = true
-	$Water.visible = true
+	Water.visible = true
+	$RaisingWater.play("RaisingPuddle")
 	$FailTimer.start()
 	print("new puddle!")
 
 func clear_event():
 	self.input_ray_pickable = false
-	$Water.visible = false
+	Water.visible = false
 	$ToolIcon.visible = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
 func _on_Leak_mouse_entered():
-	if $Water.visible:
+	if Water.visible:
 		$ToolIcon.visible = true
 	$ActionTimer.start()
 
@@ -41,6 +43,7 @@ func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
 		progress = progress + 2.5
 		print("puddle fixing : " + str(progress))
+		$Water.set_translation(Vector3(0, -0.09, 0) * (min(progress, 100.0) / 100.0))
 		if progress >= 100:
 			print("fixed puddle!")
 			clear_event()
