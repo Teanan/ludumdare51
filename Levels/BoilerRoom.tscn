@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Objects/Tools/Hammer.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Objects/Tools/Bucket.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Objects/Tools/Mop.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/Pipe/ExhaustPressure.tscn" type="PackedScene" id=23]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -186,10 +187,10 @@ transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.57898 )
 
 [node name="StraightPipe" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 13 )]
-transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, -0.7, 0, 0 )
 
 [node name="StraightPipe2" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 13 )]
-transform = Transform( -27, 1.13247e-07, 0, -4.07689e-06, -0.75, 0, 0, 0, 0.75, 0, 0.5, 0 )
+transform = Transform( -23, 1.13247e-07, 0, -3.4729e-06, -0.75, 0, 0, 0, 0.75, -0.7, 0.5, 0 )
 
 [node name="AngledPipe" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 12 )]
 transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, -4.5, 0.68, 0 )
@@ -202,6 +203,9 @@ transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131
 
 [node name="AngledPipe2" parent="Boilerco/LargeGauge" instance=ExtResource( 12 )]
 transform = Transform( -0.25577, 0.042137, -0.320877, 0.105278, 0.397576, -0.0317073, 0.30603, -0.101554, -0.257271, 0.061684, -0.0521288, -0.0607004 )
+
+[node name="Exhaust" parent="Boilerco" instance=ExtResource( 23 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.69949, 2.27651, -2.56552 )
 
 [node name="CoalPile" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -2.4, 0, -2.4 )
@@ -256,7 +260,7 @@ transform = Transform( 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
 
 [node name="Leak" parent="Events" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89814, 2.70325, -2.50229 )
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 1.06274, 2.66166, -2.43055 )
 
 [node name="Leak2" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.100365, -0.0301985, -0.994492, -0.173221, 0.984805, -0.0124227, 0.979756, 0.17102, -0.104071, -0.322004, 2.5312, -2.55423 )
