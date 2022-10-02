@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Models/Light/light_plafonnier.glb" type="PackedScene" id=1]
 [ext_resource path="res://Objects/LightPlafonnier.gd" type="Script" id=2]
@@ -49,10 +49,37 @@ tracks/1/keys = {
 "values": [ 1.5, 0.0, 1.5 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "LongBlink"
+tracks/0/type = "value"
+tracks/0/path = NodePath("light_plafonnier/OmniLight:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.6, 0.7, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.7, 0.0, 0.0, 0.35, 0.0, 0.0, 0.7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.6, 0.7, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.5, 0.0, 0.0, 0.75, 0.0, 0.0, 1.5 ]
+}
+
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../light_plafonnier/generated(Clone):mesh:surface_1/material:emission_enabled")
+tracks/0/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_energy")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -61,10 +88,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ 1.5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../light_plafonnier/OmniLight:light_energy")
+tracks/1/path = NodePath("light_plafonnier/OmniLight:light_energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -74,30 +101,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.7 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_energy")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.5 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_enabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
 }
 
 [node name="LightPlafonnier" type="Spatial"]
@@ -121,6 +124,7 @@ omni_attenuation = 29.8571
 
 [node name="LightAnimation" type="AnimationPlayer" parent="."]
 anims/Blink = SubResource( 1 )
+anims/LongBlink = SubResource( 4 )
 anims/RESET = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
