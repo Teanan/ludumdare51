@@ -29,9 +29,6 @@ onready var EVENTS_POOL = ALL_EVENTS
 func _ready():
 	$Boilerco/BoilerAssembly/boiler/Handle.connect("select", self, "_on_tool_select")
 
-	for e in ALL_EVENTS:
-		e.trigger_event()
-
 func _input(event):
 	var camera = $Camera
 
