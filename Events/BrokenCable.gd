@@ -3,13 +3,15 @@ extends Spatial
 onready var RoomScene = $"../.."
 onready var FixedCable = $"../../PlafonnierElec/FixedCable"
 
-export (String) var ActionTool = "Wrench"
+export (String) var ActionTool = "Tape"
 
 var progress = 0
 
 func _ready():
 	if RoomScene == null:
 		assert(false, "faut lancer la BoilerRoom connard")
+	$ToolIcon/Tools.get_node(ActionTool).visible = true
+	$ToolIcon.visible = false
 	clear_event()
 
 func trigger_event():
@@ -21,14 +23,17 @@ func trigger_event():
 func clear_event():
 	FixedCable.visible = true
 	$BrokenCable.visible = false
+	$ToolIcon.visible = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
 func _on_BrokenCable_mouse_entered():
-	print("helo")
+	if $BrokenCable.visible:
+		$ToolIcon.visible = true
 	$ActionTimer.start()
 
 func _on_BrokenCable_mouse_exited():
+	$ToolIcon.visible = false
 	$ActionTimer.stop()
 
 func _on_ActionTimer_timeout():

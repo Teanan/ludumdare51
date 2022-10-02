@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Models/Tools/scotch.glb" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Tape.gd" type="Script" id=2]
@@ -32,6 +32,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 90, 0, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CPUParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "taping"
@@ -61,6 +73,29 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 70, -150, 180 ), Vector3( 40, -50, -80 ), Vector3( 40, -125, -20 ), Vector3( 50, 60, 15 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CPUParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="SpatialMaterial" id=9]
+vertex_color_use_as_albedo = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id=10]
+material = SubResource( 9 )
+size = Vector2( 0.1, 0.25 )
 
 [node name="Tape" type="StaticBody" groups=["Tape", "Tool"]]
 script = ExtResource( 2 )
@@ -75,6 +110,27 @@ shape = SubResource( 6 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 7 )
 anims/taping = SubResource( 8 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+emitting = false
+amount = 5
+lifetime = 0.5
+mesh = SubResource( 10 )
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3( 0, 0, 1 )
+gravity = Vector3( 0, 0, 9.8 )
+angular_velocity = 5.0
+angular_velocity_random = 1.0
+linear_accel = 1.0
+linear_accel_random = 1.0
+radial_accel = 10.0
+radial_accel_random = 1.0
+tangential_accel = 10.0
+tangential_accel_random = 1.0
+angle = 50.0
+angle_random = 1.0
+color = Color( 0.243137, 0.356863, 0.505882, 1 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

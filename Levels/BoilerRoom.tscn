@@ -259,15 +259,27 @@ transform = Transform( 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -
 [node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
 
+[node name="ToolIcon" parent="Events/BrokenCable" index="4"]
+transform = Transform( 0.329666, 0, 0.226539, 0, 0.4, 0, -0.226539, 0, 0.329666, 0.255886, 0.25788, -0.0681064 )
+
 [node name="Leak" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 1.06274, 2.66166, -2.43055 )
+
+[node name="ToolIcon" parent="Events/Leak" index="4"]
+transform = Transform( 0.242423, 0, -0.318168, 0, 0.4, 0, 0.318168, 0, 0.242423, -0.171818, 0.0557041, 0.249445 )
 
 [node name="Leak2" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.100365, -0.0301985, -0.994492, -0.173221, 0.984805, -0.0124227, 0.979756, 0.17102, -0.104071, -0.322004, 2.5312, -2.55423 )
 
+[node name="ToolIcon" parent="Events/Leak2" index="4"]
+transform = Transform( -0.0235833, 0.0391163, 0.397382, -0.0450239, 0.395275, -0.0415811, -0.396757, -0.0471809, -0.018902, 0.167831, 0.18762, -0.212265 )
+
 [node name="LeakBoiler" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.550753, -0.105361, 0.827992, -0.187896, 0.982189, 0, 0.813245, 0.155576, 0.56074, 0.83037, 1.04797, -2.50417 )
 ActionTool = "Wrench"
+
+[node name="ToolIcon" parent="Events/LeakBoiler" index="4"]
+transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.0957325, -0.394804, -0.0411593, 0.0493521, 0.256301, 0.210589, -0.12236 )
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
@@ -275,3 +287,8 @@ ActionTool = "Wrench"
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkWrench/Wrench" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkHammer/Hammer" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/BucketMop/Mop" to="." method="_on_tool_select"]
+
+[editable path="Events/BrokenCable"]
+[editable path="Events/Leak"]
+[editable path="Events/Leak2"]
+[editable path="Events/LeakBoiler"]

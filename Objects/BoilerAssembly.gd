@@ -5,10 +5,14 @@ export (float) var pressure = 1.0
 export (float) var coal = 0.0
 
 onready var anim = $boiler/AnimationPlayer
+onready var fire_particles = $boiler/FireParticles
 
 const min_temp = 12
 const max_temp = 125
 const max_pressure = 4
+
+const MIN_FIRE_SCALE = Vector3(0, 1, 2.6)
+const MAX_FIRE_SCALE = Vector3(8, 2.3, 2.6)
 
 var door_opened = false
 
@@ -26,6 +30,10 @@ func _on_BoilerTick_timeout():
 	
 	$boiler/Gauge.set_value((temperature - min_temp) * 100 / (max_temp - min_temp))
 	#$PressureGauge.set_value(pressure * 100 / (max_pressure))
+	var temperature_ratio = (temperature - min_temp) / (max_temp - min_temp)
+	fire_particles.scale = MIN_FIRE_SCALE.linear_interpolate(MAX_FIRE_SCALE, temperature_ratio)
+	
+
 
 func add_coal():
 	if door_opened:
