@@ -103,7 +103,7 @@ MIN_VALUE = 0
 ALLOWED_JITTER_VALUE = 5
 
 [node name="Handle" parent="boiler" instance=ExtResource( 7 )]
-transform = Transform( -1, 8.74227e-08, 0, -8.74227e-08, -1, 0, 0, 0, 1, -12.6145, 9.84217, -0.43662 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5549, 4.81048, 0.306582 )
 
 [node name="ToolIcon" parent="boiler" instance=ExtResource( 8 )]
 transform = Transform( 4.28812, 0, -3.17119, 0, 5.33333, 0, 3.17119, 0, 4.28812, -0.039772, 1.94767, 10.0079 )

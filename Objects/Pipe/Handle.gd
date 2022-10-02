@@ -1,8 +1,14 @@
 extends GeneralTool
 
+var is_handled = false
+
 func animate(play: bool):
-	pass
-	#if play:
-	#	$AnimationPlayer.play("taping", -1.0, 2.0)
-	#else:
-	#	$AnimationPlayer.play("RESET")
+	if play:
+		$AnimationPlayer.play("handling", -1.0, 1.5)
+		is_handled = true
+	else:
+		if is_handled:
+			$AnimationPlayer.play_backwards("handling")
+			is_handled = false
+		else:
+			$AnimationPlayer.play("RESET")
