@@ -22,12 +22,14 @@ func trigger_event():
 
 func clear_event():
 	$Water.visible = false
+	$ToolIcon.visible = false
 	$Water/CPUParticles.emitting = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
 func _on_Leak_mouse_entered():
-	$ToolIcon.visible = true
+	if $Water.visible:
+		$ToolIcon.visible = true
 	$ActionTimer.start()
 
 func _on_Leak_mouse_exited():
