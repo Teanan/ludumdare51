@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Models/Gauge/jauge_aiguille.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Models/Gauge/Jauge_presure.glb" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Gauge/LargeGauge.gd" type="Script" id=3]
+[ext_resource path="res://Objects/ToolIcon.tscn" type="PackedScene" id=4]
 
-[node name="LargeGauge" type="Spatial"]
+[sub_resource type="SphereShape" id=1]
+radius = 0.242102
+
+[node name="LargeGauge" type="StaticBody"]
 script = ExtResource( 3 )
 
 [node name="gauge_color" parent="." instance=ExtResource( 2 )]
@@ -15,3 +19,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.372823, 0.0279243 )
 
 [node name="jauge_aiguille" parent="gauge_rotation" instance=ExtResource( 1 )]
 transform = Transform( 0.03, 0, 0, 0, 0.015, 0, 0, 0, 0.01, -0.0156499, 0.0549804, 0 )
+
+[node name="ToolIcon" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0184044, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368872, 0 )
+shape = SubResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_LargeGauge_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_LargeGauge_mouse_exited"]

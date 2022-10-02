@@ -9,4 +9,4 @@ func _on_mouse_exited():
 	self.animate(false)
 
 func animate(play: bool):
-	$extincteur/CPUParticles.visible = play
+	$extincteur/CPUParticles.emitting = play
