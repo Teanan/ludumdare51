@@ -96,7 +96,7 @@ shadow_enabled = true
 autostart = true
 
 [node name="Gauge" parent="boiler" instance=ExtResource( 5 )]
-transform = Transform( 6.66667, 0, 0, 0, 6.66667, 0, 0, 0, 6.66667, 0, 4.0012, 8 )
+transform = Transform( 6.66667, 0, 0, 0, 6.66667, 0, 0, 0, 6.66667, 0, 4.001, 8.22046 )
 MAX_ANGLE_DEG = -90
 MIN_ANGLE_DEG = 90
 MAX_VALUE = 100
