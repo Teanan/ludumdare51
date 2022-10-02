@@ -20,6 +20,7 @@ func trigger_event():
 	$Fire.visible = true
 	$Fire/CPUParticles.emitting = true
 	$FailTimer.start()
+	$SFX.play()
 	print("new fire!")
 
 func clear_event():
@@ -27,6 +28,7 @@ func clear_event():
 	$Fire.visible = false
 	$ToolIcon.visible = false
 	$Fire/CPUParticles.emitting = false
+	$SFX.stop()
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
