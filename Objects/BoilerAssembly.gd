@@ -8,6 +8,7 @@ onready var anim = $boiler/AnimationPlayer
 onready var fire_particles = $boiler/FireParticles
 onready var PressureGauge = $"../LargeGauge"
 onready var CoalIcon = $boiler/ToolIcon
+onready var PV = $"../../PV"
 
 const min_temp = 12
 const max_temp = 125
@@ -28,11 +29,15 @@ func _ready():
 func _on_BoilerTick_timeout():
 	if coal > 0:
 		coal = coal - 1
-		temperature = temperature + 5
-		pressure = pressure + 0.004 * temperature
+		if pressure > 0.5:
+			temperature = temperature + 5
+		pressure = pressure + 0.004 * (20 + temperature)
 
 	temperature = clamp(temperature - 2, min_temp, max_temp)
 	pressure = clamp(pressure - 0.05, 0, max_pressure)
+	
+	if temperature >= 50 and temperature <= 100:
+		PV.add_pv(1)
 	
 	$boiler/Gauge.set_value((temperature - min_temp) * 100 / (max_temp - min_temp))
 	PressureGauge.set_value(pressure * 100 / (max_pressure))
