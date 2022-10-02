@@ -1,5 +1,7 @@
 extends Spatial
 
+signal dialog_completed(fully)
+
 export var SPEED_TEXT = 0.05 #En seconde par charactère
 
 var curent_dialog = []
@@ -29,6 +31,8 @@ func display_next():
 		textFade.start()
 		textFade.set_active(true)
 		get_node("../../Voice").play()
+	else:
+		emit_signal("dialog_completed", true)
 
 func _on_TextPopup_input_event(_camera, _event, _position, _normal, _shape_idx):
 	if Input.is_action_just_released("Action"):

@@ -85,3 +85,7 @@ func _on_Decrocher_animation_finished(anim_name):
 	if anim_name == "Décrocher":
 		$Voice.play()
 		dialog_popup.display_next()
+
+
+func _on_TextPopup_dialog_completed(_fully):
+	_on_phone_hang()

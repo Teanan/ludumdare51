@@ -149,3 +149,5 @@ func game_over():
 		phone._on_phone_pickup()
 	
 	
+func _on_Phone_dialog_completed(fully):
+	hand = null

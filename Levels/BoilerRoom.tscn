@@ -394,6 +394,7 @@ wait_time = 10.0
 autostart = true
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
+[connection signal="dialog_completed" from="Usables/Phone" to="." method="_on_Phone_dialog_completed"]
 [connection signal="select" from="Usables/Phone" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/TapeToolHook/Tape" to="." method="_on_tool_select"]

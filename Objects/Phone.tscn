@@ -177,5 +177,6 @@ stream = ExtResource( 6 )
 
 [connection signal="mouse_entered" from="HandsetCo/Handset" to="." method="_on_Handset_mouse_entered"]
 [connection signal="mouse_exited" from="HandsetCo/Handset" to="." method="_on_Handset_mouse_exited"]
+[connection signal="dialog_completed" from="HandsetCo/TextPopup" to="." method="_on_TextPopup_dialog_completed"]
 [connection signal="animation_finished" from="Ringing" to="." method="_on_Ringing_animation_finished"]
 [connection signal="animation_finished" from="Decrocher" to="." method="_on_Decrocher_animation_finished"]
