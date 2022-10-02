@@ -26,7 +26,7 @@ func _input(event):
 		hand.visible = true
 		hand.global_transform.origin = camera.project_position(event.position, pickup_dist)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Action"):
 		_on_tool_action_using()
 	if Input.is_action_just_released("Action"):
