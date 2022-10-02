@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Models/Boiler/handle_pressure.glb" type="PackedScene" id=1]
+
+[node name="Handle" type="Spatial"]
+
+[node name="handle_pressure" parent="." instance=ExtResource( 1 )]

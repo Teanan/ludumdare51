@@ -137,7 +137,7 @@ visible = false
 [node name="Boilerco" type="Spatial" parent="."]
 
 [node name="BoilerAssembly" parent="Boilerco" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.65 )
+transform = Transform( 0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, 1.5, 0, -2.6021 )
 
 [node name="PipeSystem" type="Spatial" parent="Boilerco"]
 
