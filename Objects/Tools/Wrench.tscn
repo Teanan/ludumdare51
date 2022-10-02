@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Models/Tools/wrench.glb" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Wrench.gd" type="Script" id=2]
@@ -6,6 +6,62 @@
 [sub_resource type="CapsuleShape" id=1]
 radius = 3.0176
 height = 8.13165
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("wrench:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("wrench:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "wrenching"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("wrench:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 90 ), Vector3( 0, 0, 45 ), Vector3( 0, 0, 135 ), Vector3( 0, 0, 90 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("wrench:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.2, 0, 0 ), Vector3( -0.135, 0.16, 0 ), Vector3( -0.2, 0, 0 ), Vector3( -0.135, -0.16, 0 ), Vector3( -0.2, 0, 0 ) ]
+}
 
 [node name="Wrench" type="StaticBody" groups=["Tool", "Wrench"]]
 script = ExtResource( 2 )
@@ -17,5 +73,9 @@ transform = Transform( 0.033, 0, 0, 0, 0.033, 0, 0, 0, 0.033, 0, 0, 0 )
 transform = Transform( 0.033, 0, 0, 0, -1.44248e-09, 0.033, 0, -0.033, -1.44248e-09, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[connection signal="mouse_entered" from="." to="." method="_on_Wrench_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Wrench_mouse_exited"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/wrenching = SubResource( 3 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

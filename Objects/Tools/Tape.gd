@@ -1,9 +1,7 @@
-extends StaticBody
+extends GeneralTool
 
-signal select(node)
-
-func _on_Tape_mouse_entered():
-	emit_signal("select", self)
-
-func _on_Tape_mouse_exited():
-	emit_signal("select", null)
+func animate(play: bool):
+	if play:
+		$AnimationPlayer.play("taping", -1.0, 2.0)
+	else:
+		$AnimationPlayer.play("RESET")

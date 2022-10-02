@@ -227,7 +227,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.8, -3 )
 [node name="TapeToolHook" parent="Usables/ToolBoard" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, -0.3, 0.02 )
 
-[node name="Tape" parent="Usables/ToolBoard/TapeToolHook" groups=["Tape", "Tool"] instance=ExtResource( 6 )]
+[node name="Tape" parent="Usables/ToolBoard/TapeToolHook" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.074, -0.05, 0.006 )
 
 [node name="ToolHookForkWrench" parent="Usables/ToolBoard" instance=ExtResource( 8 )]
@@ -243,7 +243,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.3, 0.05 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, 0.12 )
 
 [node name="BucketMop" type="Spatial" parent="Usables"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -2.69549 )
 
 [node name="Bucket" parent="Usables/BucketMop" instance=ExtResource( 21 )]
 
@@ -252,14 +252,18 @@ transform = Transform( 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -
 
 [node name="Events" type="Spatial" parent="."]
 
+[node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
+
 [node name="Leak" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89814, 2.70325, -2.50229 )
 
 [node name="Leak2" parent="Events" instance=ExtResource( 4 )]
-transform = Transform( -0.982189, -0.187896, 0, -0.187896, 0.982189, 0, 0, 0, 1, 0.701108, 1.04797, -2.47246 )
+transform = Transform( -0.100365, -0.0301985, -0.994492, -0.173221, 0.984805, -0.0124227, 0.979756, 0.17102, -0.104071, -0.322004, 2.5312, -2.55423 )
 
-[node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
+[node name="LeakBoiler" parent="Events" instance=ExtResource( 4 )]
+transform = Transform( -0.550753, -0.105361, 0.827992, -0.187896, 0.982189, 0, 0.813245, 0.155576, 0.56074, 0.83037, 1.04797, -2.50417 )
+ActionTool = "Wrench"
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]

@@ -3,7 +3,7 @@ extends Spatial
 onready var RoomScene = $"../.."
 onready var Boiler = $"../../Boilerco/BoilerAssembly"
 
-export (String) var ActionTool = "Wrench"
+export (String) var ActionTool = "Tape"
 
 var progress = 0
 
