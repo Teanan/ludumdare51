@@ -23,6 +23,12 @@ func _ready():
 func add_dialogue(dialog: Array):
 	waiting_calls.append(dialog)
 	queue_next()
+	
+func clear_all_dialogue():
+	waiting_calls.clear()
+	if picked_up:
+		$Decrocher.play("Raccrocher",-1 , 5.0)
+		picked_up = false
 
 func queue_next():
 	if not ringing and not waiting_calls.empty():
@@ -42,6 +48,7 @@ func _on_phone_pickup():
 
 func _on_phone_hang():
 	$Decrocher.play("Raccrocher")
+	picked_up = false
 	emit_signal("dialog_completed", dialog_popup.is_current_dialog_finished())
 	if not waiting_calls.empty():
 		$Ringing.play("Ring")

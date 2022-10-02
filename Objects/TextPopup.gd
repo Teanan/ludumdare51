@@ -1,6 +1,6 @@
 extends Spatial
 
-const SPEED_TEXT = 0.05 #En seconde par charactère
+export var SPEED_TEXT = 0.05 #En seconde par charactère
 
 var curent_dialog = []
 onready var label = $Viewport/GUI/Label

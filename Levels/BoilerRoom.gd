@@ -7,6 +7,7 @@ var hand: Spatial = null
 var hand_origin: Vector3
 
 var using_tool = false
+var game_over = false
 
 var last_event = null
 
@@ -45,6 +46,8 @@ func _process(_delta):
 		elif hover != null:
 			_on_tool_pickup()
 	if Input.is_action_just_released("Cancel"):
+		if game_over:
+			Game.emit_signal("ChangeScene", "res://MainMenu/MainMenu.tscn")
 		if hand != null:
 			_on_tool_cancel()
 
@@ -112,6 +115,8 @@ func _on_tool_select(item: Spatial):
 		hover.scale = Vector3(1.1, 1.1, 1.1)
 
 func _on_EventTimer_timeout():
+	if game_over:
+		pass
 	var pool = EVENTS_POOL
 
 	# remove last event
@@ -123,3 +128,14 @@ func _on_EventTimer_timeout():
 
 	last_event = event
 	event.trigger_event()
+	
+
+func game_over():
+	if not game_over :
+		game_over = true
+		var phone = $Usables/Phone
+		phone.clear_all_dialogue()
+		phone.add_dialogue(["\nWhat is this mess!\nAre you unable to take care of a simple boiler?\nYOU'RE FIRED!"])
+		phone._on_phone_pickup()
+	
+	
