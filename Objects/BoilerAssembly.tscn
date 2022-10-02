@@ -5,6 +5,7 @@
 [ext_resource path="res://Assets/Models/Boiler/boiler_shaper.glb" type="PackedScene" id=3]
 [ext_resource path="res://Objects/BoilerAssembly.gd" type="Script" id=4]
 [ext_resource path="res://Objects/Gauge/Gauge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/FireParticles.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -44,10 +45,6 @@ vertex_color_use_as_albedo = true
 material = SubResource( 3 )
 size = Vector3( 0.05, 0.05, 0.05 )
 
-[sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0, 0.52514, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 0.539062, 0, 1, 1, 0, 0, 1 )
-
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.741, 1, 0.8 )
 
@@ -69,8 +66,12 @@ playback_speed = 1.5
 anims/RESET = SubResource( 6 )
 anims/open_door = SubResource( 7 )
 
-[node name="FireParticles" type="CPUParticles" parent="boiler"]
+[node name="FireParticles" parent="boiler" instance=ExtResource( 6 )]
+transform = Transform( 8, 0, 0, 0, 2.3, 0, 0, 0, 2.667, 0, -9.7188, 2.66667 )
+
+[node name="SparkParticles" type="CPUParticles" parent="boiler"]
 transform = Transform( 13.3333, 0, 0, 0, 13.3333, 0, 0, 0, 13.3333, 0, -9.7188, 2.66667 )
+visible = false
 amount = 10
 lifetime = 0.7
 mesh = SubResource( 4 )
@@ -79,7 +80,7 @@ emission_box_extents = Vector3( 0.5, 0.1, 0.1 )
 direction = Vector3( 0, 2, 1 )
 spread = 5.0
 initial_velocity = 3.0
-color_ramp = SubResource( 5 )
+color = Color( 0.913725, 0.4, 0.0666667, 1 )
 
 [node name="OmniLight" type="OmniLight" parent="boiler"]
 transform = Transform( 13.3333, 0, 0, 0, 13.3333, 0, 0, 0, 13.3333, 0, -3.9988, -1.6 )
