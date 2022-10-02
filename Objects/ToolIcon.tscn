@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/GameTemplate/GUI/Buttons/DefaultButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Models/Tools/wrench.glb" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Models/Tools/mop.glb" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Models/Coal/Coal_nugget.glb" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Models/Boiler/handle_pressure.glb" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Models/Tools/hammer.glb" type="PackedScene" id=8]
 
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 0.35, 0.25 )
@@ -77,4 +78,8 @@ visible = false
 
 [node name="PressureHandle" parent="Tools" instance=ExtResource( 7 )]
 transform = Transform( -0.0313412, 0.0315255, 0, -0.0315255, -0.0313412, 0, 0, 0, 0.0444536, 0, 1.86265e-09, -0.0140218 )
+visible = false
+
+[node name="Hammer" parent="Tools" instance=ExtResource( 8 )]
+transform = Transform( 0.202109, 0.242169, -0.00418901, -0.242049, 0.202145, 0.00783877, 0.00870203, -0.00180801, 0.315329, 0.00885159, 0.0425607, 0 )
 visible = false

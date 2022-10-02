@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Objects/Tools/Hammer.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Objects/Tools/Bucket.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Objects/Tools/Mop.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Events/TempGauge.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/Models/Textures/Walls.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Models/Textures/Floor.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Models/Textures/Ceilling.png" type="Texture" id=26]
@@ -303,6 +304,12 @@ ActionTool = "Wrench"
 [node name="ToolIcon" parent="Events/LeakBoiler" index="4"]
 transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.0957325, -0.394804, -0.0411593, 0.0493521, 0.256301, 0.210589, -0.12236 )
 
+[node name="TempGauge" parent="Events" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44134, 1.61738, -2.05983 )
+
+[node name="ToolIcon" parent="Events/TempGauge" index="2"]
+transform = Transform( 0.383447, 0, -0.113881, 0, 0.4, 0, 0.113881, 0, 0.383447, -0.0727737, 0.37059, 0.0188138 )
+
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )
 
@@ -321,3 +328,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 [editable path="Events/Leak"]
 [editable path="Events/Leak2"]
 [editable path="Events/LeakBoiler"]
+[editable path="Events/TempGauge"]
