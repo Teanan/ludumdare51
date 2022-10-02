@@ -167,22 +167,22 @@ transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
 
 [node name="StraightPipe3" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
-transform = Transform( -8.74227e-08, 0, 0.2, 1.74846e-07, 0.2, 0, -2, 1.74846e-08, -8.74228e-09, 1.96235, 0, 0.436064 )
+transform = Transform( -8.74227e-08, 0, 0.2, 1.74846e-07, 0.2, 0, -2, 1.74846e-08, -8.74228e-09, 1.95, 0, 0.44 )
 
 [node name="AngledPipe2" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
-transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.96344, -0.0481479, 0.479021 )
+transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.95, -0.048, 0.48 )
 
 [node name="StraightPipe4" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
-transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.96235, -0.368134, 0.47917 )
+transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.95, -0.35, 0.48 )
 
 [node name="StraightPipe5" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
-transform = Transform( -1.1837e-07, 1.77877e-21, 0.2, 2.36741e-07, 0.2, 7.64273e-16, -2.708, 1.74846e-08, -8.74228e-09, 1.81245, 0, 0.51678 )
+transform = Transform( -1.1837e-07, 1.77877e-21, 0.2, 2.36741e-07, 0.2, 7.64273e-16, -2.708, 1.74846e-08, -8.74228e-09, 1.8, 0, 0.51 )
 
 [node name="AngledPipe3" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
-transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.81354, -0.0481479, 0.559736 )
+transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.8, -0.048, 0.55 )
 
 [node name="StraightPipe6" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
-transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.81245, -0.368134, 0.559885 )
+transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.8, -0.36, 0.55 )
 
 [node name="Top" type="Spatial" parent="BoilerAssembly/PipeSystem"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.57898 )
