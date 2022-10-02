@@ -8,18 +8,24 @@ var hand_origin: Vector3
 
 var using_tool = false
 
+var last_event = null
+
+onready var ALL_EVENTS = [
+	$Events/Leak,
+	$Events/Leak2,
+	$Events/LeakBoiler,
+	$Events/BrokenCable,
+	$Events/TempGauge,
+	$Events/PressureGauge,
+	$Events/Fire,
+	$Events/Fire2,
+	$Events/Puddle
+]
+
+onready var EVENTS_POOL = ALL_EVENTS
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Events/Leak.trigger_event()
-	$Events/Leak2.trigger_event()
-	$Events/LeakBoiler.trigger_event()
-	$Events/BrokenCable.trigger_event()
-	$Events/TempGauge.trigger_event()
-	$Events/PressureGauge.trigger_event()
-	$Events/Fire.trigger_event()
-	$Events/Fire2.trigger_event()
-	$Events/Puddle.trigger_event()
-	
 	$Boilerco/BoilerAssembly/boiler/Handle.connect("select", self, "_on_tool_select")
 
 func _input(event):
@@ -104,3 +110,16 @@ func _on_tool_select(item: Spatial):
 	hover = item
 	if hover != null and hand == null:
 		hover.scale = Vector3(1.1, 1.1, 1.1)
+
+func _on_EventTimer_timeout():
+	var pool = EVENTS_POOL
+
+	# remove last event
+	if last_event != null:
+		pool.erase(last_event)
+
+	var rand_index:int = randi() % pool.size()
+	var event = pool[rand_index]
+
+	last_event = event
+	event.trigger_event()

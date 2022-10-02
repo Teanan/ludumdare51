@@ -15,6 +15,7 @@ func _ready():
 	clear_event()
 	
 func trigger_event():
+	progress = 0
 	self.input_ray_pickable = true
 	$Water.visible = true
 	$FailTimer.start()
