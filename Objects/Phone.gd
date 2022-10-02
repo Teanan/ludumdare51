@@ -65,6 +65,7 @@ func _on_Ringing_animation_finished(anim_name):
 	if anim_name != "Ring":
 		pass
 	nbr_rang += 1
+	$SFX.play()
 	if nbr_rang > RING_LIMIT_BEFORE_FAIL:
 		print("You failed at picking up the phone")
 		emit_signal("dialog_completed", false)

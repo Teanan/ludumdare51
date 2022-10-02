@@ -24,6 +24,7 @@ func trigger_event():
 	$BrokenCable.visible = true
 	light_plafonnier.turn_off()
 	spark_particles.emitting = true
+	$SFX.play()
 	$FailTimer.start()
 	print("broken cable!")
 
@@ -34,6 +35,7 @@ func clear_event():
 	light_plafonnier.turn_on()
 	spark_particles.emitting = false
 	$ToolIcon.visible = false
+	$SFX.stop()
 	$FailTimer.stop()
 	$ActionTimer.stop()
 

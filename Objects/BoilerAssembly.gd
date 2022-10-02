@@ -60,6 +60,7 @@ func release_pressure():
 	$boiler/Handle.animate(true)
 	$Exhaust/CPUParticles.amount = clamp((MAX_PARTICULES_AMOUNT * pressure) / max_pressure, 1, MAX_PARTICULES_AMOUNT)
 	$Exhaust/CPUParticles.emitting = true
+	$Exhaust/SFX.playing = true
 	pressure = min_pressure
 
 func add_coal():
