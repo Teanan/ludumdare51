@@ -25,7 +25,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "Ring"
-loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("HandsetCo/Handset:rotation_degrees")
@@ -169,3 +168,5 @@ anims/Raccrocher = SubResource( 6 )
 
 [connection signal="mouse_entered" from="HandsetCo/Handset" to="." method="_on_Handset_mouse_entered"]
 [connection signal="mouse_exited" from="HandsetCo/Handset" to="." method="_on_Handset_mouse_exited"]
+[connection signal="animation_finished" from="Ringing" to="." method="_on_Ringing_animation_finished"]
+[connection signal="animation_finished" from="Decrocher" to="." method="_on_Decrocher_animation_finished"]
