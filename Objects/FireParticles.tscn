@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.130405, 0.998195 ), -0.200361, -0.200361, 0, 0, Vector2( 1, 0.154332 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=13]
+offsets = PoolRealArray( 0, 0.482353, 1 )
+colors = PoolColorArray( 0.763672, 0.192978, 0.192978, 1, 0.963379, 0.493382, 0.0516955, 1, 0.970703, 0.895026, 0.360522, 1 )
+
+[node name="FireParticles" type="Spatial"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+amount = 20
+lifetime = 0.5
+randomness = 1.0
+draw_order = 2
+mesh = SubResource( 11 )
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 6.0
+initial_velocity_random = 0.1
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = 5.0
+linear_accel_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale_amount = 0.9
+scale_amount_random = 0.8
+scale_amount_curve = SubResource( 12 )
+color_ramp = SubResource( 13 )
