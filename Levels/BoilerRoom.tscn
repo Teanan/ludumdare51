@@ -255,6 +255,9 @@ transform = Transform( 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -
 [node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
 
+[node name="ToolIcon" parent="Events/BrokenCable" index="4"]
+transform = Transform( 0.329666, 0, 0.226539, 0, 0.4, 0, -0.226539, 0, 0.329666, 0.255886, 0.25788, -0.0681064 )
+
 [node name="Leak" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89814, 2.70325, -2.50229 )
 
@@ -281,6 +284,7 @@ transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkHammer/Hammer" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/BucketMop/Mop" to="." method="_on_tool_select"]
 
+[editable path="Events/BrokenCable"]
 [editable path="Events/Leak"]
 [editable path="Events/Leak2"]
 [editable path="Events/LeakBoiler"]
