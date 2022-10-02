@@ -133,74 +133,75 @@ transform = Transform( -8.74228e-07, 0.3, 0, -20, -1.31134e-08, 0, 0, 0, 0.3, -2
 transform = Transform( -1.74846e-07, 0.3, 0, -4, -1.31134e-08, 0, 0, 0, 0.3, -2.98718, 1.82382, -2.56101 )
 visible = false
 
-[node name="BoilerAssembly" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.65266 )
+[node name="Boilerco" type="Spatial" parent="."]
 
-[node name="PipeSystem" type="Spatial" parent="BoilerAssembly"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.65266 )
+[node name="BoilerAssembly" parent="Boilerco" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.65 )
 
-[node name="Low" type="Spatial" parent="BoilerAssembly/PipeSystem"]
+[node name="PipeSystem" type="Spatial" parent="Boilerco"]
+
+[node name="Low" type="Spatial" parent="Boilerco/PipeSystem"]
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 2.75, 0.75, -0.5 )
 
-[node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, 0 )
-
-[node name="StraightPipe" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 13 )]
+[node name="StraightPipe" parent="Boilerco/PipeSystem/Low" instance=ExtResource( 13 )]
 transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 13 )]
-transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
+[node name="StraightPipe2" parent="Boilerco/PipeSystem/Low" instance=ExtResource( 13 )]
+transform = Transform( -7.86805e-08, -1, 7.30145e-30, 1.8, -4.37114e-08, -1.67038e-22, 3.00668e-22, 7.52316e-37, 1, 2.14, 0.2, 0 )
 
-[node name="AngledPipe2" parent="BoilerAssembly/PipeSystem/Low" instance=ExtResource( 12 )]
-transform = Transform( 3.12511e-08, 0.19247, 0.268058, 0.33, -4.89799e-08, -3.30405e-09, 3.78591e-08, 0.268058, -0.19247, 1.72061, 0.105732, 0.0170113 )
+[node name="AngledPipe" parent="Boilerco/PipeSystem/Low" instance=ExtResource( 12 )]
+transform = Transform( 1, -4.56956e-08, 1.49012e-08, 4.56956e-08, 1, 2.33438e-08, -1.49012e-08, -9.92085e-10, 1, 1.9, 0, 0 )
 
-[node name="Mid" type="Spatial" parent="BoilerAssembly/PipeSystem"]
+[node name="Mid" type="Spatial" parent="Boilerco/PipeSystem"]
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 2.75, 1.7, -0.5 )
 
-[node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
+[node name="AngledPipe" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 0, 0 )
 
-[node name="StraightPipe" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( 12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
-transform = Transform( -5.68248e-08, -1, 7.30144e-30, 1.3, -4.37114e-08, -1.67037e-22, 2.17149e-22, -7.52316e-37, 1, 2.14, 0.2, 0 )
+[node name="StraightPipe2" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 13 )]
+transform = Transform( -7.86805e-08, -1, 7.30145e-30, 1.8, -4.37114e-08, -1.67038e-22, 3.00668e-22, 7.52316e-37, 1, 2.14, 0.2, 0 )
 
-[node name="StraightPipe3" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe3" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( -8.74227e-08, 0, 0.2, 1.74846e-07, 0.2, 0, -2, 1.74846e-08, -8.74228e-09, 1.95, 0, 0.44 )
 
-[node name="AngledPipe2" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
+[node name="AngledPipe2" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 12 )]
 transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.95, -0.048, 0.48 )
 
-[node name="StraightPipe4" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe4" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.95, -0.35, 0.48 )
 
-[node name="StraightPipe5" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe5" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( -1.1837e-07, 1.77877e-21, 0.2, 2.36741e-07, 0.2, 7.64273e-16, -2.708, 1.74846e-08, -8.74228e-09, 1.8, 0, 0.51 )
 
-[node name="AngledPipe3" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 12 )]
+[node name="AngledPipe3" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 12 )]
 transform = Transform( 8.74228e-09, 1.74846e-08, -0.2, 0.2, -8.74228e-09, 8.74228e-09, -8.74228e-09, -0.2, -1.74846e-08, 1.8, -0.048, 0.55 )
 
-[node name="StraightPipe6" parent="BoilerAssembly/PipeSystem/Mid" instance=ExtResource( 13 )]
+[node name="StraightPipe6" parent="Boilerco/PipeSystem/Mid" instance=ExtResource( 13 )]
 transform = Transform( 1.20792e-13, -8.74228e-09, 0.2, 2, -2.62268e-08, -1.77636e-15, 2.62268e-07, 0.2, 8.74228e-09, 1.8, -0.36, 0.55 )
 
-[node name="Top" type="Spatial" parent="BoilerAssembly/PipeSystem"]
+[node name="Top" type="Spatial" parent="Boilerco/PipeSystem"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 2, -2.57898 )
 
-[node name="StraightPipe" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
+[node name="StraightPipe" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -3.0598e-07, -1, 0, 7, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="StraightPipe2" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
+[node name="StraightPipe2" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -27, 1.13247e-07, 0, -4.07689e-06, -0.75, 0, 0, 0, 0.75, 0, 0.5, 0 )
 
-[node name="AngledPipe" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 12 )]
+[node name="AngledPipe" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 12 )]
 transform = Transform( -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, -4.5, 0.68, 0 )
 
-[node name="StraightPipe3" parent="BoilerAssembly/PipeSystem/Top" instance=ExtResource( 13 )]
+[node name="StraightPipe3" parent="Boilerco/PipeSystem/Top" instance=ExtResource( 13 )]
 transform = Transform( -1.31134e-07, -0.75, 0, 3, -3.27835e-08, 0, 0, 0, 0.75, -4.5, 0.68, 0 )
 
-[node name="LargeGauge" parent="BoilerAssembly" instance=ExtResource( 16 )]
-transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 1.06656, 0.782642, 0.43021 )
+[node name="LargeGauge" parent="Boilerco" instance=ExtResource( 16 )]
+transform = Transform( 0.496039, -0.204175, -0.593513, 0.429338, 0.662195, 0.131025, 0.457837, -0.399764, 0.520168, 2.567, 0.783, -2.1 )
+
+[node name="AngledPipe2" parent="Boilerco/LargeGauge" instance=ExtResource( 12 )]
+transform = Transform( -0.25577, 0.042137, -0.320877, 0.105278, 0.397576, -0.0317073, 0.30603, -0.101554, -0.257271, 0.061684, -0.0521288, -0.0607004 )
 
 [node name="CoalPile" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -2.4, 0, -2.4 )

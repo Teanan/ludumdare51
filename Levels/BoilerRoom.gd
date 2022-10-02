@@ -56,7 +56,7 @@ func _on_tool_action_done():
 	if hand.has_method("animate"):
 		hand.animate(false)
 	if hand.is_in_group("Coal"):
-		$BoilerAssembly.add_coal()
+		$Boilerco/BoilerAssembly.add_coal()
 		$Coal.visible = false
 		hand = null
 	#else:

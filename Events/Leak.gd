@@ -1,7 +1,7 @@
 extends Spatial
 
 onready var RoomScene = $"../.."
-onready var Boiler = $"../../BoilerAssembly"
+onready var Boiler = $"../../Boilerco/BoilerAssembly"
 
 export (String) var ActionTool = "Wrench"
 
