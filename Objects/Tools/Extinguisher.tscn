@@ -4,14 +4,17 @@
 [ext_resource path="res://Objects/Tools/Extinguisher.gd" type="Script" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
-params_blend_mode = 1
+flags_transparent = true
 params_billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
+albedo_color = Color( 1, 1, 1, 0.866667 )
 
 [sub_resource type="SphereMesh" id=1]
 material = SubResource( 3 )
+radial_segments = 16
+rings = 8
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.286449
@@ -25,7 +28,6 @@ transform = Transform( 0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0 )
 
 [node name="CPUParticles" type="CPUParticles" parent="extincteur"]
 transform = Transform( 0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 5.10335, 5.82508, 0 )
-visible = false
 lifetime = 0.67
 mesh = SubResource( 1 )
 spread = 26.33
