@@ -51,5 +51,5 @@ func _on_ActionTimer_timeout():
 			clear_event()
 
 func _on_FailTimer_timeout():
-	PV.remove_pv(10)
-	print("failed leak")
+	PV.remove_pv(1)
+	#print("failed leak")

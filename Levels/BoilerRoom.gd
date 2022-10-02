@@ -20,7 +20,8 @@ onready var ALL_EVENTS = [
 	$Events/PressureGauge,
 	$Events/Fire,
 	$Events/Fire2,
-	$Events/Puddle
+	$Events/Puddle,
+	$Events/PrankCall
 ]
 
 onready var EVENTS_POOL = ALL_EVENTS

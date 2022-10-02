@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Events/PressureGauge.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Events/Fire.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Events/Puddle.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Events/BasicCall.tscn" type="PackedScene" id=32]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -285,11 +286,17 @@ transform = Transform( 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -
 [node name="BrokenCable" parent="Events" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98748, 1.82055, -2.5614 )
 
+[node name="FailTimer" parent="Events/BrokenCable" index="3"]
+wait_time = 1.0
+
 [node name="ToolIcon" parent="Events/BrokenCable" index="4"]
 transform = Transform( 0.329666, 0, 0.226539, 0, 0.4, 0, -0.226539, 0, 0.329666, 0.255886, 0.25788, -0.0681064 )
 
 [node name="Leak" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.90044, 0, -0.434979, 0, 1, 0, 0.434979, 0, -0.90044, 2.59924, 1.71038, -2.2977 )
+
+[node name="FailTimer" parent="Events/Leak" index="3"]
+wait_time = 1.0
 
 [node name="ToolIcon" parent="Events/Leak" index="4"]
 transform = Transform( -0.027248, 0, 0.399071, 0, 0.4, 0, -0.399071, 0, -0.027248, -0.0555961, 0.302272, 0.00886047 )
@@ -297,12 +304,18 @@ transform = Transform( -0.027248, 0, 0.399071, 0, 0.4, 0, -0.399071, 0, -0.02724
 [node name="Leak2" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.100365, -0.0301985, -0.994492, -0.173221, 0.984805, -0.0124227, 0.979756, 0.17102, -0.104071, -0.322004, 2.5312, -2.55423 )
 
+[node name="FailTimer" parent="Events/Leak2" index="3"]
+wait_time = 1.0
+
 [node name="ToolIcon" parent="Events/Leak2" index="4"]
 transform = Transform( -0.0235833, 0.0391163, 0.397382, -0.0450239, 0.395275, -0.0415811, -0.396757, -0.0471809, -0.018902, 0.167831, 0.18762, -0.212265 )
 
 [node name="LeakBoiler" parent="Events" instance=ExtResource( 4 )]
 transform = Transform( -0.550753, -0.105361, 0.827992, -0.187896, 0.982189, 0, 0.813245, 0.155576, 0.56074, 0.800488, 1.04797, -2.38959 )
 ActionTool = "Wrench"
+
+[node name="FailTimer" parent="Events/LeakBoiler" index="3"]
+wait_time = 1.0
 
 [node name="ToolIcon" parent="Events/LeakBoiler" index="4"]
 transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.0957325, -0.394804, -0.0411593, 0.0493521, 0.256301, 0.210589, -0.12236 )
@@ -322,11 +335,17 @@ transform = Transform( 0.328413, 0.00284584, -0.228335, -0.00517696, 0.399959, -
 [node name="Fire" parent="Events" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.707485, 2.0965, -2.08194 )
 
+[node name="FailTimer" parent="Events/Fire" index="2"]
+wait_time = 1.0
+
 [node name="ToolIcon" parent="Events/Fire" index="3"]
 transform = Transform( 0.357964, 0, -0.178498, 0, 0.4, 0, 0.178498, 0, 0.357964, 0.0604274, 0.269971, 0.207759 )
 
 [node name="Fire2" parent="Events" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79289, 0.133271, -2.17056 )
+
+[node name="FailTimer" parent="Events/Fire2" index="2"]
+wait_time = 1.0
 
 [node name="ToolIcon" parent="Events/Fire2" index="3"]
 transform = Transform( 0.309889, -0.000196909, 0.25292, 0.00014527, 0.4, 0.000133426, -0.25292, -1.15181e-05, 0.309889, 0, 0.792198, 0 )
@@ -334,8 +353,14 @@ transform = Transform( 0.309889, -0.000196909, 0.25292, 0.00014527, 0.4, 0.00013
 [node name="Puddle" parent="Events" instance=ExtResource( 31 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634764, 0, -2.51509 )
 
+[node name="FailTimer" parent="Events/Puddle" index="2"]
+wait_time = 1.0
+
 [node name="ToolIcon" parent="Events/Puddle" index="3"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.401809, 0 )
+
+[node name="PrankCall" parent="Events" instance=ExtResource( 32 )]
+Dialog = [ "Hello, good day to you Sir. Is it Mr Stefano on the phone?", "We've been trying to reach you about your car extended warranty.", "Do you have some time to talk about our offers, products and amazing limited discounts ?", "I understand you may not have much time to give us but are you sure you're not interested ?", "Very well i'll be contacting you again, good day to you !" ]
 
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )

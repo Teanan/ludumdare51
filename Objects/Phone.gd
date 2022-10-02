@@ -15,10 +15,10 @@ onready var dialog_popup = $HandsetCo/TextPopup
 func _ready():
 	dialog_popup.visible = false
 	#TODO Clear this:
-	add_dialogue(["\nCeci est un premier test de dialogue!",
-				"\nEt ceci est la seconde partie"])
-	add_dialogue(["\nEt voici même un second appel",
-				"J'espère que tout marche même lorsque les messages sont très long et pas beau"])
+#	add_dialogue(["\nCeci est un premier test de dialogue!",
+#				"\nEt ceci est la seconde partie"])
+#	add_dialogue(["\nEt voici même un second appel",
+#				"J'espère que tout marche même lorsque les messages sont très long et pas beau"])
 	
 func add_dialogue(dialog: Array):
 	waiting_calls.append(dialog)
@@ -73,7 +73,7 @@ func _on_Ringing_animation_finished(anim_name):
 		waiting_calls.pop_front()
 		queue_next()
 	else:
-		print(anim_name + " : " + str(nbr_rang))
+		#print(anim_name + " : " + str(nbr_rang))
 		$Ringing.play("Ring")
 
 
