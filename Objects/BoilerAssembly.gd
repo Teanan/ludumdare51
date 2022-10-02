@@ -40,7 +40,7 @@ func _on_BoilerTick_timeout():
 
 func scale_fire():
 	var old_scale = fire_particles.scale
-	var coal_ratio = coal / MAX_FIRE_COAL_RATIO
+	var coal_ratio = min(coal, MAX_FIRE_COAL_RATIO)  / MAX_FIRE_COAL_RATIO
 	var dest_scale = MIN_FIRE_SCALE.linear_interpolate(MAX_FIRE_SCALE, coal_ratio)
 	fire_particles.scale = old_scale + (dest_scale - old_scale) * 0.3
 	
