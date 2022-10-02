@@ -29,7 +29,7 @@ func display_next():
 		textFade.start()
 		textFade.set_active(true)
 
-func _on_TextPopup_input_event(camera, event, position, normal, shape_idx):
+func _on_TextPopup_input_event(_camera, _event, _position, _normal, _shape_idx):
 	if Input.is_action_just_released("Action"):
 		if(textFade.is_active()):
 			print("Skipping!")
