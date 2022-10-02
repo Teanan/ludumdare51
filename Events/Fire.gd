@@ -1,10 +1,9 @@
 extends Spatial
 
 onready var RoomScene = $"../.."
-onready var Boiler = $"../../Boilerco/BoilerAssembly"
 onready var PV = $"../../PV"
 
-export (String) var ActionTool = "Tape"
+export (String) var ActionTool = "Extinguisher"
 
 var progress = 0
 
@@ -17,21 +16,21 @@ func _ready():
 	
 func trigger_event():
 	self.input_ray_pickable = true
-	$Water.visible = true
-	$Water/CPUParticles.emitting = true
+	$Fire.visible = true
+	$Fire/CPUParticles.emitting = true
 	$FailTimer.start()
-	print("new leak!")
+	print("new fire!")
 
 func clear_event():
 	self.input_ray_pickable = false
-	$Water.visible = false
+	$Fire.visible = false
 	$ToolIcon.visible = false
-	$Water/CPUParticles.emitting = false
+	$Fire/CPUParticles.emitting = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
 func _on_Leak_mouse_entered():
-	if $Water.visible:
+	if $Fire.visible:
 		$ToolIcon.visible = true
 	$ActionTimer.start()
 
@@ -41,12 +40,12 @@ func _on_Leak_mouse_exited():
 
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
-		progress = progress + 2.5
-		print("leak fixing : " + str(progress))
+		progress = progress + 3
+		print("fire fixing : " + str(progress))
 		if progress >= 100:
-			print("fixed leak!")
+			print("fixed fire!")
 			clear_event()
 
 func _on_FailTimer_timeout():
-	PV.remove_pv(10)
-	print("failed leak")
+	PV.remove_pv(2)
+	print("failed fire")
