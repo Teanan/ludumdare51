@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -22,11 +22,15 @@
 [ext_resource path="res://Objects/Tools/Hammer.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Objects/Tools/Bucket.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Objects/Tools/Mop.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Objects/Pipe/ExhaustPressure.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Events/TempGauge.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/Models/Textures/Walls.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Models/Textures/Floor.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Models/Textures/Ceilling.png" type="Texture" id=26]
 [ext_resource path="res://Objects/Alarm.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Objects/PV.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Events/PressureGauge.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Events/Fire.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Events/Puddle.tscn" type="PackedScene" id=31]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -102,12 +106,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 environment = SubResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( -0.404721, -0.656069, -0.637004, -0.913844, 0.315342, 0.255831, 0.0330318, 0.685662, -0.72717, 0, 3.99762, 0 )
+transform = Transform( -0.404721, -0.656069, -0.637004, -0.913844, 0.315342, 0.255831, 0.0330318, 0.685662, -0.72717, 0, 4, 0 )
 light_color = Color( 0.556863, 0.133333, 0.0470588, 1 )
 light_energy = 0.2
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352907, -0.328795, -0.295931, 0.533839, 0.792111, 0, 3.99762, 0 )
+transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352906, -0.328796, -0.295931, 0.533839, 0.792111, 1, 4, 0 )
 light_energy = 0.01
 shadow_enabled = true
 
@@ -229,9 +233,6 @@ transform = Transform( 0.341935, 0.203739, -0.039647, -0.206791, 0.340967, -0.03
 [node name="AngledPipe2" parent="Boilerco/LargeGauge" instance=ExtResource( 12 )]
 transform = Transform( -0.25577, 0.042137, -0.320877, 0.105278, 0.397576, -0.0317073, 0.30603, -0.101554, -0.257271, 0.061684, -0.0521288, -0.0607004 )
 
-[node name="Exhaust" parent="Boilerco" instance=ExtResource( 23 )]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.69949, 2.27651, -2.56552 )
-
 [node name="CoalPile" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -2.4, 0, -2.4 )
 
@@ -247,8 +248,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.7, -3 )
 [node name="ExtincteurSupport" parent="Usables" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.7, -3 )
 
-[node name="Extinguisher" parent="Usables/ExtincteurSupport" groups=["Extinguisher", "Tool"] instance=ExtResource( 2 )]
-transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-15, -1.31134e-07, -1.14641e-14, 1, 1.19209e-07, -0.1, 0.292811 )
+[node name="Extinguisher" parent="Usables/ExtincteurSupport" instance=ExtResource( 2 )]
+transform = Transform( 1, 1.31135e-07, 1.31134e-07, -1.31135e-07, 1, -5.73205e-15, -1.31134e-07, -1.14641e-14, 1, 0, 0.35, 0.293 )
 
 [node name="ToolBoard" parent="Usables" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.8, -3 )
@@ -260,7 +261,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, -0
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.074, -0.05, 0.006 )
 
 [node name="ToolHookForkWrench" parent="Usables/ToolBoard" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0.05 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0320732, -0.3, 0.05 )
 
 [node name="Wrench" parent="Usables/ToolBoard/ToolHookForkWrench" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.15 )
@@ -306,8 +307,41 @@ ActionTool = "Wrench"
 [node name="ToolIcon" parent="Events/LeakBoiler" index="4"]
 transform = Transform( 0.0576398, -0.0909833, 0.385226, -0.0284139, 0.387334, 0.0957325, -0.394804, -0.0411593, 0.0493521, 0.256301, 0.210589, -0.12236 )
 
+[node name="TempGauge" parent="Events" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44134, 1.61738, -2.05983 )
+
+[node name="ToolIcon" parent="Events/TempGauge" index="2"]
+transform = Transform( 0.383447, 0, -0.113881, 0, 0.4, 0, 0.113881, 0, 0.383447, -0.0727737, 0.37059, 0.0188138 )
+
+[node name="PressureGauge" parent="Events" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44773, 1.02759, -2.28508 )
+
+[node name="ToolIcon" parent="Events/PressureGauge" index="2"]
+transform = Transform( 0.328413, 0.00284584, -0.228335, -0.00517696, 0.399959, -0.00246114, 0.228294, 0.00497588, 0.328416, -0.186836, 0.311491, 0.261103 )
+
+[node name="Fire" parent="Events" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.707485, 2.0965, -2.08194 )
+
+[node name="ToolIcon" parent="Events/Fire" index="3"]
+transform = Transform( 0.357964, 0, -0.178498, 0, 0.4, 0, 0.178498, 0, 0.357964, 0.0604274, 0.269971, 0.207759 )
+
+[node name="Fire2" parent="Events" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79289, 0.133271, -2.17056 )
+
+[node name="ToolIcon" parent="Events/Fire2" index="3"]
+transform = Transform( 0.309889, -0.000196909, 0.25292, 0.00014527, 0.4, 0.000133426, -0.25292, -1.15181e-05, 0.309889, 0, 0.792198, 0 )
+
+[node name="Puddle" parent="Events" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634764, 0, -2.51509 )
+
+[node name="ToolIcon" parent="Events/Puddle" index="3"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.401809, 0 )
+
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.83113 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )
+
+[node name="PV" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/Phone" to="." method="_on_tool_select"]
@@ -322,3 +356,8 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.9547
 [editable path="Events/Leak"]
 [editable path="Events/Leak2"]
 [editable path="Events/LeakBoiler"]
+[editable path="Events/TempGauge"]
+[editable path="Events/PressureGauge"]
+[editable path="Events/Fire"]
+[editable path="Events/Fire2"]
+[editable path="Events/Puddle"]

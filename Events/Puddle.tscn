@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Events/Puddle.gd" type="Script" id=1]
+[ext_resource path="res://Objects/ToolIcon.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape" id=4]
+radius = 0.896732
+height = 4.14684
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_color = Color( 0.0705882, 0.513726, 0.894118, 0.627451 )
+
+[node name="Puddle" type="StaticBody"]
+transform = Transform( 1.67244, 0, 0, 0, 1, 0, 0, 0, 1, 0.0137924, 0.252111, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -4.40997e-08, 0, -0.60324, 0, 1, 0, 1.67244, 0, -4.37114e-08, 0.171433, -1.4406, 0 )
+shape = SubResource( 4 )
+
+[node name="ActionTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="FailTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ToolIcon" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
+
+[node name="Water" type="MeshInstance" parent="."]
+transform = Transform( -9.99478e-08, 0, -2.28654, 0, 1, 0, 1.438, 0, -6.28569e-08, 0.136224, -0.912965, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Leak_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Leak_mouse_exited"]
+[connection signal="timeout" from="ActionTimer" to="." method="_on_ActionTimer_timeout"]
+[connection signal="timeout" from="FailTimer" to="." method="_on_FailTimer_timeout"]

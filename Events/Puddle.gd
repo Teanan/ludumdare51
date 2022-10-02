@@ -1,10 +1,9 @@
 extends Spatial
 
 onready var RoomScene = $"../.."
-onready var Boiler = $"../../Boilerco/BoilerAssembly"
 onready var PV = $"../../PV"
 
-export (String) var ActionTool = "Tape"
+export (String) var ActionTool = "Mop"
 
 var progress = 0
 
@@ -18,15 +17,13 @@ func _ready():
 func trigger_event():
 	self.input_ray_pickable = true
 	$Water.visible = true
-	$Water/CPUParticles.emitting = true
 	$FailTimer.start()
-	print("new leak!")
+	print("new puddle!")
 
 func clear_event():
 	self.input_ray_pickable = false
 	$Water.visible = false
 	$ToolIcon.visible = false
-	$Water/CPUParticles.emitting = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
@@ -42,11 +39,11 @@ func _on_Leak_mouse_exited():
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
 		progress = progress + 2.5
-		print("leak fixing : " + str(progress))
+		print("puddle fixing : " + str(progress))
 		if progress >= 100:
-			print("fixed leak!")
+			print("fixed puddle!")
 			clear_event()
 
 func _on_FailTimer_timeout():
-	PV.remove_pv(10)
-	print("failed leak")
+	PV.remove_pv(2)
+	print("failed puddle")

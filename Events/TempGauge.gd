@@ -1,52 +1,41 @@
 extends Spatial
 
 onready var RoomScene = $"../.."
-onready var Boiler = $"../../Boilerco/BoilerAssembly"
-onready var PV = $"../../PV"
+onready var Gauge = $"../../Boilerco/BoilerAssembly/boiler/Gauge"
 
-export (String) var ActionTool = "Tape"
+export (String) var ActionTool = "Hammer"
 
 var progress = 0
 
 func _ready():
-	if RoomScene == null:
-		assert(false, "faut lancer la BoilerRoom connard")
 	$ToolIcon/Tools.get_node(ActionTool).visible = true
 	$ToolIcon.visible = false
 	clear_event()
 	
 func trigger_event():
 	self.input_ray_pickable = true
-	$Water.visible = true
-	$Water/CPUParticles.emitting = true
-	$FailTimer.start()
-	print("new leak!")
+	Gauge.BUGGED = true
+	print("broken gauge!")
 
 func clear_event():
 	self.input_ray_pickable = false
-	$Water.visible = false
 	$ToolIcon.visible = false
-	$Water/CPUParticles.emitting = false
-	$FailTimer.stop()
+	Gauge.BUGGED = false
 	$ActionTimer.stop()
 
-func _on_Leak_mouse_entered():
-	if $Water.visible:
+func _on_TempGauge_mouse_entered():
+	if Gauge.BUGGED:
 		$ToolIcon.visible = true
 	$ActionTimer.start()
 
-func _on_Leak_mouse_exited():
+func _on_TempGauge_mouse_exited():
 	$ToolIcon.visible = false
 	$ActionTimer.stop()
 
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
 		progress = progress + 2.5
-		print("leak fixing : " + str(progress))
+		print("gauge fixing : " + str(progress))
 		if progress >= 100:
-			print("fixed leak!")
+			print("fixed gauge!")
 			clear_event()
-
-func _on_FailTimer_timeout():
-	PV.remove_pv(10)
-	print("failed leak")

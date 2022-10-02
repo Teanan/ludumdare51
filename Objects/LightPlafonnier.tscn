@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Models/Light/light_plafonnier.glb" type="PackedScene" id=1]
 [ext_resource path="res://Objects/LightPlafonnier.gd" type="Script" id=2]
@@ -103,6 +103,34 @@ tracks/1/keys = {
 "values": [ 0.7 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "TurnOff"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("light_plafonnier/OmniLight:light_energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0.7, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("light_plafonnier/generated(Clone):mesh:surface_1/material:emission_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.5, 0.0 ]
+}
+
 [node name="LightPlafonnier" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -126,10 +154,15 @@ omni_attenuation = 29.8571
 anims/Blink = SubResource( 1 )
 anims/LongBlink = SubResource( 4 )
 anims/RESET = SubResource( 2 )
+anims/TurnOff = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [node name="StraightCable" parent="." instance=ExtResource( 3 )]
 transform = Transform( -2.18557e-07, -0.5, 0, 5, -2.18557e-08, 0, 0, 0, 0.5, 0, -0.2, 0 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="light_plafonnier"]

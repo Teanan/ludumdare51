@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Models/Textures/elec_spark.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.956863, 0.917647, 0.0941176, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.22149, 0.0, 0, 0 ]
+
+[node name="SparkParticles" type="Spatial"]
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+amount = 10
+lifetime = 0.22
+local_coords = false
+mesh = SubResource( 2 )
+spread = 53.2
+flatness = 0.3
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.5
+angle = 90.0
+angle_random = 1.0
+scale_amount = 0.16
+scale_amount_curve = SubResource( 3 )

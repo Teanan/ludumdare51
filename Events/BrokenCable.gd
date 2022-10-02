@@ -2,6 +2,9 @@ extends Spatial
 
 onready var RoomScene = $"../.."
 onready var FixedCable = $"../../PlafonnierElec/FixedCable"
+onready var light_plafonnier = $"../../PlafonnierElec/LightPlafonnier"
+onready var PV = $"../../PV"
+onready var spark_particles = $SparkParticles/CPUParticles
 
 export (String) var ActionTool = "Tape"
 
@@ -15,14 +18,20 @@ func _ready():
 	clear_event()
 
 func trigger_event():
+	self.input_ray_pickable = true
 	FixedCable.visible = false
 	$BrokenCable.visible = true
+	light_plafonnier.turn_off()
+	spark_particles.emitting = true
 	$FailTimer.start()
 	print("broken cable!")
 
 func clear_event():
+	self.input_ray_pickable = false
 	FixedCable.visible = true
 	$BrokenCable.visible = false
+	light_plafonnier.turn_on()
+	spark_particles.emitting = false
 	$ToolIcon.visible = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
@@ -45,4 +54,5 @@ func _on_ActionTimer_timeout():
 			clear_event()
 
 func _on_FailTimer_timeout():
-	print("failed")
+	PV.remove_pv(10)
+	print("failed broken cable")

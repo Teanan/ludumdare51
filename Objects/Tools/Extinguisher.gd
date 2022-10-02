@@ -1,12 +1,9 @@
 extends GeneralTool
 
-func _on_mouse_entered():
-	emit_signal("select", self)
-	self.animate(true)
-
-func _on_mouse_exited():
-	emit_signal("select", null)
-	self.animate(false)
+onready var anim = $AnimationPlayer
 
 func animate(play: bool):
-	$extincteur/CPUParticles.emitting = play
+	if play:
+		anim.play("extinguishing", -1.0, 1.5)
+	else:
+		anim.play("RESET")

@@ -14,6 +14,11 @@ func _ready():
 	$Events/Leak2.trigger_event()
 	$Events/LeakBoiler.trigger_event()
 	$Events/BrokenCable.trigger_event()
+	$Events/TempGauge.trigger_event()
+	$Events/PressureGauge.trigger_event()
+	$Events/Fire.trigger_event()
+	$Events/Fire2.trigger_event()
+	$Events/Puddle.trigger_event()
 	
 	$Boilerco/BoilerAssembly/boiler/Handle.connect("select", self, "_on_tool_select")
 
@@ -25,7 +30,7 @@ func _input(event):
 		hand.visible = true
 		hand.global_transform.origin = camera.project_position(event.position, pickup_dist)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Action"):
 		_on_tool_action_using()
 	if Input.is_action_just_released("Action"):
