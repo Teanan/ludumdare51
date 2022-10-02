@@ -64,6 +64,7 @@ transform = Transform( 0.0239172, 0.034972, 0, -0.034972, 0.0239172, 0, 0, 0, 0.
 visible = false
 
 [node name="Mop" parent="Tools" instance=ExtResource( 5 )]
+transform = Transform( 0.028498, 0.0268608, 0, -0.0268608, 0.028498, 0, 0, 0, 0.0391617, 0.0388586, 0.126948, -0.0321398 )
 visible = false
 
 [node name="Tape" parent="Tools" instance=ExtResource( 4 )]
