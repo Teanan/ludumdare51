@@ -1,7 +1,13 @@
 extends GeneralTool
 
+onready var anim = $AnimationPlayer
+
 func animate(play: bool):
 	if play:
-		$AnimationPlayer.play("taping", -1.0, 2.0)
+		anim.play("taping", -1.0, 2.0)
 	else:
-		$AnimationPlayer.play("RESET")
+		anim.play("RESET")
+
+func play_sfx(play: bool):
+	if $SFX.playing != play:
+		$SFX.playing = play

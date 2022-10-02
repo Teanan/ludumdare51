@@ -16,6 +16,7 @@ func _ready():
 	clear_event()
 	
 func trigger_event():
+	progress = 0
 	self.input_ray_pickable = true
 	$Water.visible = true
 	$Water/CPUParticles.emitting = true
@@ -41,6 +42,8 @@ func _on_Leak_mouse_exited():
 
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
+		if RoomScene.hand.has_method("play_sfx"):
+			RoomScene.hand.play_sfx(true)
 		progress = progress + 2.5
 		print("leak fixing : " + str(progress))
 		if progress >= 100:

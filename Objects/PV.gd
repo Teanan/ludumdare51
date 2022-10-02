@@ -3,6 +3,7 @@ extends Spatial
 export (int) var pv = 100 setget set_pv
 
 onready var Alarm = $"../Alarm"
+onready var Boiler = $".."
 
 func _ready():
 	set_pv(100)
@@ -24,4 +25,4 @@ func remove_pv(qte):
 		Alarm.start_alarm()
 	if pv < 0:
 		set_pv(0)
-		# TODO trigger game over
+		Boiler.game_over()

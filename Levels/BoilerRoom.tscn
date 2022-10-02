@@ -343,12 +343,18 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.9547
 [node name="PV" parent="." instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 
+[node name="EventTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
+[connection signal="select" from="Usables/Phone" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ExtincteurSupport/Extinguisher" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/TapeToolHook/Tape" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkWrench/Wrench" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/ToolBoard/ToolHookForkHammer/Hammer" to="." method="_on_tool_select"]
 [connection signal="select" from="Usables/BucketMop/Mop" to="." method="_on_tool_select"]
+[connection signal="timeout" from="EventTimer" to="." method="_on_EventTimer_timeout"]
 
 [editable path="Boilerco/LargeGauge"]
 [editable path="Events/BrokenCable"]
