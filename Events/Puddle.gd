@@ -39,6 +39,8 @@ func _on_Leak_mouse_exited():
 
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
+		if RoomScene.hand.has_method("play_sfx"):
+			RoomScene.hand.play_sfx(true)
 		progress = progress + 2.5
 		print("puddle fixing : " + str(progress))
 		if progress >= 100:

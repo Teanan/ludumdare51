@@ -48,6 +48,8 @@ func _on_BrokenCable_mouse_exited():
 
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
+		if RoomScene.hand.has_method("play_sfx"):
+			RoomScene.hand.play_sfx(true)
 		progress = progress + 4
 		print("cable fixing : " + str(progress))
 		if progress >= 100:
