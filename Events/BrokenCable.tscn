@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/BrokenCable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Events/BrokenCable.gd" type="Script" id=2]
 [ext_resource path="res://Objects/ToolIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/SparkParticles.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.1021
@@ -26,6 +27,8 @@ wait_time = 10.0
 
 [node name="ToolIcon" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.0184044, 0 )
+
+[node name="SparkParticles" parent="." instance=ExtResource( 4 )]
 
 [connection signal="mouse_entered" from="." to="." method="_on_BrokenCable_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_BrokenCable_mouse_exited"]
