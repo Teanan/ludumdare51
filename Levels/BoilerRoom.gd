@@ -16,6 +16,8 @@ func _ready():
 	$Events/BrokenCable.trigger_event()
 	$Events/TempGauge.trigger_event()
 	$Events/PressureGauge.trigger_event()
+	$Events/Fire.trigger_event()
+	$Events/Fire2.trigger_event()
 	
 	$Boilerco/BoilerAssembly/boiler/Handle.connect("select", self, "_on_tool_select")
 

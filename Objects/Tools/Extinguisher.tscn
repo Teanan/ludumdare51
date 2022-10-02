@@ -25,7 +25,7 @@ _data = [ Vector2( 0.0222973, 0.128159 ), 0.0, 0.0, 0, 0, Vector2( 0.15473, 1 ),
 radius = 0.286449
 height = 0.705488
 
-[node name="Extinguisher" type="StaticBody"]
+[node name="Extinguisher" type="StaticBody" groups=["Extinguisher", "Tool"]]
 script = ExtResource( 2 )
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
