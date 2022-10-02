@@ -10,7 +10,9 @@ var using_tool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Events/Leak.trigger_event()
 	$Events/Leak2.trigger_event()
+	$Events/LeakBoiler.trigger_event()
 	$Events/BrokenCable.trigger_event()
 	pass # Replace with function body.
 
