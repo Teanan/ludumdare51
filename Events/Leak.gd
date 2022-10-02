@@ -2,6 +2,7 @@ extends Spatial
 
 onready var RoomScene = $"../.."
 onready var Boiler = $"../../Boilerco/BoilerAssembly"
+onready var PV = $"../../PV"
 
 export (String) var ActionTool = "Tape"
 
@@ -38,11 +39,12 @@ func _on_Leak_mouse_exited():
 
 func _on_ActionTimer_timeout():
 	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
-		progress = progress + 2
+		progress = progress + 2.5
 		print("leak fixing : " + str(progress))
 		if progress >= 100:
-			print("fixed!")
+			print("fixed leak!")
 			clear_event()
 
 func _on_FailTimer_timeout():
-	print("failed")
+	PV.remove_pv(10)
+	print("failed leak")

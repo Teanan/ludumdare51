@@ -2,6 +2,7 @@ extends Spatial
 
 onready var RoomScene = $"../.."
 onready var FixedCable = $"../../PlafonnierElec/FixedCable"
+onready var PV = $"../../PV"
 
 export (String) var ActionTool = "Tape"
 
@@ -45,4 +46,5 @@ func _on_ActionTimer_timeout():
 			clear_event()
 
 func _on_FailTimer_timeout():
+	PV.remove_pv(10)
 	print("failed")
