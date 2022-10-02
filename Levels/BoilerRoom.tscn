@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Objects/PV.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Events/PressureGauge.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Events/Fire.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Events/Puddle.tscn" type="PackedScene" id=31]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -330,6 +331,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79289, 0.133271, -2.17056 )
 [node name="ToolIcon" parent="Events/Fire2" index="3"]
 transform = Transform( 0.309889, -0.000196909, 0.25292, 0.00014527, 0.4, 0.000133426, -0.25292, -1.15181e-05, 0.309889, 0, 0.792198, 0 )
 
+[node name="Puddle" parent="Events" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.634764, 0, -2.51509 )
+
+[node name="ToolIcon" parent="Events/Puddle" index="3"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.401809, 0 )
+
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )
 
@@ -352,3 +359,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 [editable path="Events/PressureGauge"]
 [editable path="Events/Fire"]
 [editable path="Events/Fire2"]
+[editable path="Events/Puddle"]
