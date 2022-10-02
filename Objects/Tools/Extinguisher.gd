@@ -1,5 +1,7 @@
 extends GeneralTool
 
+onready var particles = $CPUParticles
+
 func _on_mouse_entered():
 	emit_signal("select", self)
 	self.animate(true)
@@ -9,4 +11,4 @@ func _on_mouse_exited():
 	self.animate(false)
 
 func animate(play: bool):
-	$extincteur/CPUParticles.emitting = play
+	particles.emitting = play
