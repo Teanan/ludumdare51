@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Spatial",
+"class": "GeneralGauge",
+"language": "GDScript",
+"path": "res://Objects/Gauge/GeneralGauge.gd"
+}, {
+"base": "StaticBody",
+"class": "GeneralTool",
+"language": "GDScript",
+"path": "res://Objects/Tools/GeneralTool.gd"
+}, {
 "base": "Reference",
 "class": "ResourceAsyncLoader",
 "language": "GDScript",
@@ -20,6 +30,8 @@ _global_script_classes=[ {
 "path": "res://addons/GameTemplate/Utility/SaveSettings.gd"
 } ]
 _global_script_class_icons={
+"GeneralGauge": "",
+"GeneralTool": "",
 "ResourceAsyncLoader": "",
 "SaveSettings": ""
 }

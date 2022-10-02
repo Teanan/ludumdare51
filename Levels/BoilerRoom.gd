@@ -1,7 +1,7 @@
 extends Spatial
 
 # Items pickup
-const pickup_dist = 2.5
+const pickup_dist = 2
 var hover: Spatial = null
 var hand: Spatial = null
 var hand_origin: Vector3
@@ -10,7 +10,10 @@ var using_tool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Events/Leak.trigger_event()
 	$Events/Leak2.trigger_event()
+	$Events/LeakBoiler.trigger_event()
+	$Events/BrokenCable.trigger_event()
 	pass # Replace with function body.
 
 
@@ -42,15 +45,20 @@ func _on_tool_pickup():
 		# pickup highlighted item
 		hand = hover
 		hand_origin = hover.global_transform.origin
+		hand.input_ray_pickable = false
 
 func _on_tool_action_using():
 	if hand != null and hand.is_in_group("Tool"):
+		if hand.has_method("animate"):
+			hand.animate(true)
 		using_tool = true
 
 func _on_tool_action_done():
 	using_tool = false
+	if hand.has_method("animate"):
+		hand.animate(false)
 	if hand.is_in_group("Coal"):
-		$BoilerAssembly.add_coal()
+		$Boilerco/BoilerAssembly.add_coal()
 		$Coal.visible = false
 		hand = null
 	#else:
@@ -59,6 +67,8 @@ func _on_tool_action_done():
 	#	hand = null
 
 func _on_tool_cancel():
+	if hand.has_method("animate"):
+		hand.animate(false)
 	if hand.is_in_group("Coal"):
 		$Coal.visible = false
 		hand = null
@@ -66,6 +76,7 @@ func _on_tool_cancel():
 		# return picked up item to origin
 		hand.global_transform.origin = hand_origin
 		hand.scale = Vector3(1, 1, 1)
+		hand.input_ray_pickable = true
 		hand = null
 		hover = null
 	

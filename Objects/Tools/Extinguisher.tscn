@@ -25,6 +25,7 @@ transform = Transform( 0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0 )
 
 [node name="CPUParticles" type="CPUParticles" parent="extincteur"]
 transform = Transform( 0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 5.10335, 5.82508, 0 )
+visible = false
 lifetime = 0.67
 mesh = SubResource( 1 )
 spread = 26.33
@@ -38,5 +39,5 @@ scale_amount_random = 0.87
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 2 )
 
-[connection signal="mouse_entered" from="." to="." method="_on_Extinguisher_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Extinguisher_mouse_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
