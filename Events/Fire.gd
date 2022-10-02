@@ -46,7 +46,7 @@ func _on_ActionTimer_timeout():
 		if RoomScene.hand.has_method("play_sfx"):
 			RoomScene.hand.play_sfx(true)
 		progress = progress + 3
-		print("fire fixing : " + str(progress))
+		#print("fire fixing : " + str(progress))
 		if progress >= 100:
 			print("fixed fire!")
 			clear_event()

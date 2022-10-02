@@ -21,8 +21,10 @@ func _ready():
 #				"J'espère que tout marche même lorsque les messages sont très long et pas beau"])
 	
 func add_dialogue(dialog: Array):
-	waiting_calls.append(dialog)
-	queue_next()
+	if not dialog.empty():
+		print("Added dialogue to phone waiting : " + str(dialog))
+		waiting_calls.append(dialog)
+		queue_next()
 	
 func clear_all_dialogue():
 	waiting_calls.clear()

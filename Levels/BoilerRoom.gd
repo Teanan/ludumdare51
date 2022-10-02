@@ -21,7 +21,10 @@ onready var ALL_EVENTS = [
 	$Events/Fire,
 	$Events/Fire2,
 	$Events/Puddle,
-	$Events/PrankCall
+	$Events/PrankCall,
+	$Events/SuperiorCall,
+	$Events/HigherTempCall,
+	$Events/LowerTempCall
 ]
 
 onready var EVENTS_POOL = ALL_EVENTS
@@ -126,6 +129,8 @@ func _on_EventTimer_timeout():
 	# remove last event
 	if last_event != null:
 		pool.erase(last_event)
+	
+	print("Pool : " + str(pool))
 
 	if not pool.empty():
 		var rand_index:int = randi() % pool.size()

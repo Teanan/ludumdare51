@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Events/Fire.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Events/Puddle.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Events/BasicCall.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Events/TemperatureCall.tscn" type="PackedScene" id=33]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -363,7 +364,24 @@ wait_time = 1.0
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.401809, 0 )
 
 [node name="PrankCall" parent="Events" instance=ExtResource( 32 )]
-Dialog = [ "Hello, good day to you Sir. Is it Mr Stefano on the phone?", "We've been trying to reach you about your car extended warranty.", "Do you have some time to talk about our offers, products and amazing limited discounts ?", "I understand you may not have much time to give us but are you sure you're not interested ?", "Very well i'll be contacting you again, good day to you !" ]
+Dialog = [ "Hello, good day to you Sir. Is it Mr Boris on the phone?", "We've been trying to reach you about your car extended warranty.", "Do you have some time to talk about our offers, products and amazing limited discounts ?", "I understand you may not have much time to give us but are you sure you're not interested ?", "Very well i'll be contacting you again, good day to you !" ]
+
+[node name="SuperiorCall" parent="Events" instance=ExtResource( 32 )]
+Dialog = [ "Hey Boris, How is it going down there? You're not slacking on the job right ?", "I know it's an easy job, but i do hope you're up to the task. Hopefully the job isn't too dry for you ! AH AH Ah ah ah...", "You'll excuse me I won't go down to see you in person, the humidity down there is horrible for my hair.", "Well on that note I'll leave you alone for now. Oh! Do go easy on the coal, its price has been rising lately." ]
+PV_lost = 10
+
+[node name="HigherTempCall" parent="Events" instance=ExtResource( 33 )]
+Dialog_start = [ "Hello, Rosa speaking. The tenant on the 2nd flor. Would it be possible to have warmer water.", "Thanks in advance my dear !" ]
+Dialog_success = [ "Rosa again, this is perfect temperature. I'll be able to give my dogs a perfect bath! Thank you!" ]
+Dialog_failed = [ "Rosa here, I've contacted your superior about your atitude. Next time think twice before failing a task for the grand Dame Rosa !" ]
+PV_lost = 10
+
+[node name="LowerTempCall" parent="Events" instance=ExtResource( 33 )]
+Dialog_start = [ "Elizabeth from the first floor on the phone. My mixer valve is broken, would it pe possible to have colder water for my plants?", "Do be quick, my begonia is already losing leaves !" ]
+Dialog_success = [ "Elizabeth again, my begonia is thankful for the fresh water." ]
+Dialog_failed = [ "How could you do such a thing ! Do you believe my begonia worthless ?! You'll hear from me again !" ]
+PV_lost = 10
+higher_temp = false
 
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Events/BasicCall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Events/TemperatureCall.gd" type="Script" id=2]
+
+[node name="TemperatureCall" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+Dialog_start = [  ]
+Dialog_success = [  ]
+Dialog_failed = [  ]
+higher_temp = true
+
+[node name="Timer" type="Timer" parent="." index="0"]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

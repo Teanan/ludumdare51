@@ -44,7 +44,7 @@ func _on_ActionTimer_timeout():
 		if RoomScene.hand.has_method("play_sfx"):
 			RoomScene.hand.play_sfx(true)
 		progress = progress + 2.5
-		print("puddle fixing : " + str(progress))
+		#print("puddle fixing : " + str(progress))
 		$Water.set_translation(Vector3(0, -0.09, 0) * (min(progress, 100.0) / 100.0))
 		if progress >= 100:
 			print("fixed puddle!")

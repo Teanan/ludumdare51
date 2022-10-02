@@ -41,7 +41,7 @@ func _on_ActionTimer_timeout():
 		if RoomScene.hand.has_method("play_sfx"):
 			RoomScene.hand.play_sfx(true)
 		progress = progress + 2.5
-		print("gauge fixing : " + str(progress))
+		#print("gauge fixing : " + str(progress))
 		if progress >= 100:
 			print("fixed gauge!")
 			clear_event()
