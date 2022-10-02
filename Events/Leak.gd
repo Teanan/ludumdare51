@@ -10,6 +10,8 @@ var progress = 0
 func _ready():
 	if RoomScene == null:
 		assert(false, "faut lancer la BoilerRoom connard")
+	$ToolIcon/Tools.get_node(ActionTool).visible = true
+	$ToolIcon.visible = false
 	clear_event()
 	
 func trigger_event():
@@ -25,9 +27,11 @@ func clear_event():
 	$ActionTimer.stop()
 
 func _on_Leak_mouse_entered():
+	$ToolIcon.visible = true
 	$ActionTimer.start()
 
 func _on_Leak_mouse_exited():
+	$ToolIcon.visible = false
 	$ActionTimer.stop()
 
 func _on_ActionTimer_timeout():
