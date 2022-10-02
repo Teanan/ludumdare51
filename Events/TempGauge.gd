@@ -13,10 +13,12 @@ func _ready():
 	clear_event()
 	
 func trigger_event():
+	self.input_ray_pickable = true
 	Gauge.BUGGED = true
 	print("broken gauge!")
 
 func clear_event():
+	self.input_ray_pickable = false
 	$ToolIcon.visible = false
 	Gauge.BUGGED = false
 	$ActionTimer.stop()

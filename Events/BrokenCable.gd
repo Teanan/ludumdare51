@@ -16,12 +16,14 @@ func _ready():
 	clear_event()
 
 func trigger_event():
+	self.input_ray_pickable = true
 	FixedCable.visible = false
 	$BrokenCable.visible = true
 	$FailTimer.start()
 	print("broken cable!")
 
 func clear_event():
+	self.input_ray_pickable = false
 	FixedCable.visible = true
 	$BrokenCable.visible = false
 	$ToolIcon.visible = false

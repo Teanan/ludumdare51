@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://Assets/Models/Textures/Ceilling.png" type="Texture" id=26]
 [ext_resource path="res://Objects/Alarm.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Objects/PV.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Events/PressureGauge.tscn" type="PackedScene" id=29]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -310,6 +311,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44134, 1.61738, -2.05983 )
 [node name="ToolIcon" parent="Events/TempGauge" index="2"]
 transform = Transform( 0.383447, 0, -0.113881, 0, 0.4, 0, 0.113881, 0, 0.383447, -0.0727737, 0.37059, 0.0188138 )
 
+[node name="PressureGauge" parent="Events" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44773, 1.02759, -2.28508 )
+
+[node name="ToolIcon" parent="Events/PressureGauge" index="2"]
+transform = Transform( 0.328413, 0.00284584, -0.228335, -0.00517696, 0.399959, -0.00246114, 0.228294, 0.00497588, 0.328416, -0.186836, 0.311491, 0.261103 )
+
 [node name="Alarm" parent="." instance=ExtResource( 27 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.95476, 2.03018, -2.81002 )
 
@@ -329,3 +336,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 [editable path="Events/Leak2"]
 [editable path="Events/LeakBoiler"]
 [editable path="Events/TempGauge"]
+[editable path="Events/PressureGauge"]
