@@ -24,7 +24,7 @@ height = 0.705488
 script = ExtResource( 2 )
 
 [node name="extincteur" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, 0, 0 )
+transform = Transform( 0.072, 0, 0, 0, 0.072, 0, 0, 0, 0.072, 0, -0.45, 0 )
 
 [node name="CPUParticles" type="CPUParticles" parent="extincteur"]
 transform = Transform( 0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 5.10335, 5.82508, 0 )
@@ -39,7 +39,7 @@ scale_amount = 2.15
 scale_amount_random = 0.87
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.47, 0 )
 shape = SubResource( 2 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
