@@ -102,12 +102,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 environment = SubResource( 5 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( -0.404721, -0.656069, -0.637004, -0.913844, 0.315342, 0.255831, 0.0330318, 0.685662, -0.72717, 0, 3.99762, 0 )
+transform = Transform( -0.404721, -0.656069, -0.637004, -0.913844, 0.315342, 0.255831, 0.0330318, 0.685662, -0.72717, 0, 4, 0 )
 light_color = Color( 0.556863, 0.133333, 0.0470588, 1 )
 light_energy = 0.2
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="WorldEnvironment"]
-transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352907, -0.328795, -0.295931, 0.533839, 0.792111, 0, 3.99762, 0 )
+transform = Transform( 0.14757, 0.844849, -0.51425, -0.943742, -0.0352906, -0.328796, -0.295931, 0.533839, 0.792111, 1, 4, 0 )
 light_energy = 0.01
 shadow_enabled = true
 
