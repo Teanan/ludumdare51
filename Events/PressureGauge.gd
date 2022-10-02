@@ -2,6 +2,7 @@ extends Spatial
 
 onready var RoomScene = $"../.."
 onready var Gauge = $"../../Boilerco/LargeGauge"
+onready var particles = $"../../Boilerco/LargeGauge/FireParticles/CPUParticles"
 
 export (String) var ActionTool = "Hammer"
 
@@ -15,11 +16,13 @@ func _ready():
 func trigger_event():
 	progress = 0
 	self.input_ray_pickable = true
+	particles.emitting = true
 	Gauge.BUGGED = true
 	print("broken gauge!")
 
 func clear_event():
 	self.input_ray_pickable = false
+	particles.emitting = false
 	$ToolIcon.visible = false
 	Gauge.BUGGED = false
 	$ActionTimer.stop()

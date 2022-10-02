@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Models/Gauge/jauge_aiguille.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Models/Gauge/jauge_color.glb" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Gauge/Gauge.gd" type="Script" id=3]
+[ext_resource path="res://Objects/SmokeParticles.tscn" type="PackedScene" id=4]
 
 [node name="Gauge" type="Spatial"]
 script = ExtResource( 3 )
@@ -15,3 +16,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135036, 0 )
 
 [node name="gauge_pointer" parent="gauge_rotation" instance=ExtResource( 1 )]
 transform = Transform( 0.045, 0, 0, 0, 0.045, 0, 0, 0, 0.045, -0.024, 0.16, 0.08 )
+
+[node name="FireParticles" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.737742, 0 )

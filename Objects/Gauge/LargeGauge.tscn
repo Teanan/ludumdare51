@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Models/Gauge/jauge_aiguille.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Models/Gauge/Jauge_presure.glb" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Gauge/LargeGauge.gd" type="Script" id=3]
 [ext_resource path="res://Objects/ToolIcon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/SmokeParticles.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.242102
@@ -26,6 +27,9 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0184044, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368872, 0 )
 shape = SubResource( 1 )
+
+[node name="FireParticles" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.67966, 0 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_LargeGauge_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_LargeGauge_mouse_exited"]
