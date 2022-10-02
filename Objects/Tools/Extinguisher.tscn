@@ -9,7 +9,7 @@ params_billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-albedo_color = Color( 1, 1, 1, 0.866667 )
+albedo_color = Color( 1, 1, 1, 0.886275 )
 
 [sub_resource type="SphereMesh" id=1]
 material = SubResource( 3 )
