@@ -41,6 +41,8 @@ func _on_BoilerTick_timeout():
 	
 	if temperature >= 50 and temperature <= 100:
 		PV.add_pv(1)
+	if temperature < 25 and temperature > 110:
+		PV.remove_pv(1)
 	
 	$boiler/Gauge.set_value((temperature - min_temp) * 100 / (max_temp - min_temp))
 	PressureGauge.set_value(pressure * 100 / (max_pressure))
