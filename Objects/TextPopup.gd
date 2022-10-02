@@ -28,6 +28,7 @@ func display_next():
 			label.text.length(), label.text.length()*SPEED_TEXT)
 		textFade.start()
 		textFade.set_active(true)
+		get_node("../../Voice").play()
 
 func _on_TextPopup_input_event(_camera, _event, _position, _normal, _shape_idx):
 	if Input.is_action_just_released("Action"):
