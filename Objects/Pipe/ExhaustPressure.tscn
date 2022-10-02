@@ -11,8 +11,8 @@ particles_anim_loop = false
 
 [sub_resource type="SphereMesh" id=4]
 material = SubResource( 3 )
-radial_segments = 8
-rings = 8
+radial_segments = 4
+rings = 4
 
 [node name="Exhaust" type="Spatial"]
 
