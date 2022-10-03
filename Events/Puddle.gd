@@ -53,3 +53,14 @@ func _on_ActionTimer_timeout():
 func _on_FailTimer_timeout():
 	PV.remove_pv(1)
 	print("failed puddle")
+
+
+func is_activated():
+	return Water.visible
+	
+func is_activable(_temperature, _pressure, cur_events):
+	for event_name in cur_events:
+		if event_name.begins_with("Leak"):
+			return true
+	return false
+	

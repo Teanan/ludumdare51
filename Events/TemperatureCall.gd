@@ -12,8 +12,12 @@ export (bool) var higher_temp = true
 
 var initial_temperature = 0
 
+var activated = false
+
 func trigger_event():
 	_reset_event()
+	activated = true
+	initial_temperature = BoilerAss.temperature
 	Phone.add_dialogue(Dialog_start)
 	Phone.connect("dialog_completed", self, "_on_pickup")
 
@@ -45,3 +49,12 @@ func _reset_event():
 	$Timer.stop()
 	initial_temperature = 0
 	Phone.disconnect("dialog_completed", self, "_on_pickup")
+	activated = false
+
+
+func is_activated():
+	return activated
+	
+func is_activable(temperature, _pressure, _cur_events):
+	return (higher_temp and temperature < 0.6) or (not higher_temp and temperature > 0.5)
+	

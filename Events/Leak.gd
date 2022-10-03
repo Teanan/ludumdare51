@@ -53,3 +53,11 @@ func _on_ActionTimer_timeout():
 func _on_FailTimer_timeout():
 	PV.remove_pv(1)
 	#print("failed leak")
+
+
+func is_activated():
+	return $Water.visible
+	
+func is_activable(_temperature, r_pressure, _cur_events):
+	return r_pressure > 0.5
+	

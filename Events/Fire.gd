@@ -54,3 +54,11 @@ func _on_ActionTimer_timeout():
 func _on_FailTimer_timeout():
 	PV.remove_pv(1)
 	print("failed fire")
+
+
+func is_activated():
+	return $Fire.visible
+	
+func is_activable(temperature, _pressure, _cur_events):
+	return temperature > 0.5
+	

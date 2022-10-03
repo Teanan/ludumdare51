@@ -61,3 +61,10 @@ func _on_ActionTimer_timeout():
 func _on_FailTimer_timeout():
 	PV.remove_pv(1)
 	#print("failed broken cable")
+
+func is_activated():
+	return $BrokenCable.visible
+	
+func is_activable(_temperature, _pressure, _cur_events):
+	return true
+	

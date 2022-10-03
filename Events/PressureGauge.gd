@@ -45,3 +45,11 @@ func _on_ActionTimer_timeout():
 		if progress >= 100:
 			print("fixed gauge!")
 			clear_event()
+
+
+func is_activated():
+	return Gauge.BUGGED
+	
+func is_activable(_temperature, _pressure, _cur_events):
+	return true
+	

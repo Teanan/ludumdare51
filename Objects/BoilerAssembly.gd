@@ -54,6 +54,11 @@ func scale_fire():
 	var dest_scale = MIN_FIRE_SCALE.linear_interpolate(MAX_FIRE_SCALE, coal_ratio)
 	fire_particles.scale = old_scale + (dest_scale - old_scale) * 0.3
 
+func get_ratio_temperature():
+	return (temperature - min_temp) / (max_temp - min_temp)
+	
+func get_ratio_pressure():
+	return (pressure - min_pressure) / (max_pressure - min_pressure)
 
 func release_pressure():
 	print(pressure)

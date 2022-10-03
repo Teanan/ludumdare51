@@ -124,7 +124,9 @@ func _on_tool_select(item: Spatial):
 func _on_EventTimer_timeout():
 	if is_game_over:
 		pass
-	var pool = EVENTS_POOL
+	var r_temperature = $Boilerco/BoilerAssembly.get_ratio_temperature()
+	var r_pression = $Boilerco/BoilerAssembly.get_ratio_pressure()
+	var pool = build_event_pool(r_temperature, r_pression)
 
 	# remove last event
 	if last_event != null:
@@ -137,8 +139,20 @@ func _on_EventTimer_timeout():
 		var event = pool[rand_index]
 
 		last_event = event
+		print("T:" + str(r_temperature) + " P:" + str(r_pression))
+		print("Chosen : " + event.name)
 		event.trigger_event()
 	
+func build_event_pool(temp, press):
+	var cur_events = []
+	for event in EVENTS_POOL:
+		if event.is_activated():
+			cur_events.append(event.name)
+	var pool = []
+	for event in EVENTS_POOL:
+		if not event.name in cur_events and event.is_activable(temp, press, cur_events):
+			pool.append(event)
+	return pool
 
 func game_over():
 	if not is_game_over :
