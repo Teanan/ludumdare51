@@ -8,7 +8,7 @@ var hand_origin: Vector3
 
 var using_tool = false
 var is_game_over = false
-
+var game_started = false
 var last_event = null
 
 onready var ALL_EVENTS = [
@@ -82,6 +82,10 @@ func _on_tool_action_done():
 	if hand.has_method("animate"):
 		hand.animate(false)
 	if hand.is_in_group("Coal"):
+		if not game_started:
+			game_started = true
+			print("Game Started")
+			$EventTimer.start()
 		$Boilerco/BoilerAssembly.add_coal()
 		$Coal.visible = false
 		hand = null
@@ -163,7 +167,7 @@ func game_over():
 		phone._on_phone_pickup()
 	
 	
-func _on_Phone_dialog_completed(fully):
+func _on_Phone_dialog_completed(_fully):
 	hand = null
 	if is_game_over:
 		Game.emit_signal("ChangeScene", "res://MainMenu/BackgroundMainMenu.tscn")
