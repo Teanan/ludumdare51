@@ -12,6 +12,7 @@ size = Vector3( 1, 1, 1 )
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
 transform = Transform( 0.0331823, 0, 0, 0, 0.0331823, 0, 0, 0, 0.0331823, 0, 0, 0 )
+emitting = false
 amount = 20
 lifetime = 4.55
 randomness = 0.28

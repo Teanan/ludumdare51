@@ -17,7 +17,6 @@ func _ready():
 func trigger_event():
 	progress = 0
 	self.input_ray_pickable = true
-	$Fire.visible = true
 	$Fire/CPUParticles.emitting = true
 	$FailTimer.start()
 	$SFX.play()
@@ -25,7 +24,6 @@ func trigger_event():
 
 func clear_event():
 	self.input_ray_pickable = false
-	$Fire.visible = false
 	$ToolIcon.visible = false
 	$Fire/CPUParticles.emitting = false
 	$SFX.stop()
@@ -33,7 +31,7 @@ func clear_event():
 	$ActionTimer.stop()
 
 func _on_Leak_mouse_entered():
-	if $Fire.visible:
+	if $Fire/CPUParticles.emitting:
 		$ToolIcon.visible = true
 	$ActionTimer.start()
 
@@ -42,7 +40,7 @@ func _on_Leak_mouse_exited():
 	$ActionTimer.stop()
 
 func _on_ActionTimer_timeout():
-	if RoomScene.using_tool and RoomScene.hand.is_in_group(ActionTool):
+	if RoomScene.using_tool and RoomScene.hand != null and RoomScene.hand.is_in_group(ActionTool):
 		if RoomScene.hand.has_method("play_sfx"):
 			RoomScene.hand.play_sfx(true)
 		progress = progress + 3
@@ -57,7 +55,7 @@ func _on_FailTimer_timeout():
 
 
 func is_activated():
-	return $Fire.visible
+	return $Fire/CPUParticles.emitting
 	
 func is_activable(temperature, _pressure, _cur_events):
 	return temperature > 0.3
