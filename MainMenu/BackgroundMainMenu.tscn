@@ -40,7 +40,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5,
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 4 )
 
-[node name="BoilerRoom2" parent="." instance=ExtResource( 2 )]
+[node name="MenuRoom" parent="." instance=ExtResource( 2 )]
 
 [node name="MainMenu" parent="." instance=ExtResource( 3 )]
 offset = Vector2( 50, 25 )
