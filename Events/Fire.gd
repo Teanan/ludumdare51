@@ -7,6 +7,9 @@ export (String) var ActionTool = "Extinguisher"
 
 var progress = 0
 
+const MAX_PARTICULES = 20
+const MIN_PARTICULES = 10
+
 func _ready():
 	if RoomScene == null:
 		assert(false, "faut lancer la BoilerRoom connard")
@@ -17,6 +20,7 @@ func _ready():
 func trigger_event():
 	progress = 0
 	self.input_ray_pickable = true
+	$Fire/CPUParticles.amount = MAX_PARTICULES
 	$Fire/CPUParticles.emitting = true
 	$FailTimer.start()
 	$SFX.play()
@@ -44,6 +48,8 @@ func _on_ActionTimer_timeout():
 		if RoomScene.hand.has_method("play_sfx"):
 			RoomScene.hand.play_sfx(true)
 		progress = progress + 3
+		# does not work, reset particules system on updates
+		#$Fire/CPUParticles.amount = MiscFunc.map(progress, 0, 100, MIN_PARTICULES, MAX_PARTICULES);
 		#print("fire fixing : " + str(progress))
 		if progress >= 100:
 			print("fixed fire!")
