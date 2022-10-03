@@ -372,13 +372,13 @@ Dialog = [ "Hey Boris, How is it going down there? You're not slacking on the jo
 PV_lost = 10
 
 [node name="HigherTempCall" parent="Events" instance=ExtResource( 33 )]
-Dialog_start = [ "Hello, Rosa speaking. The tenant on the 2nd flor. Would it be possible to have warmer water.", "Thanks in advance my dear !" ]
+Dialog_start = [ "Hello, Rosa speaking. The tenant on the 2nd floor. Would it be possible to have warmer water?", "Thanks in advance my dear !" ]
 Dialog_success = [ "Rosa again, this is perfect temperature. I'll be able to give my dogs a perfect bath! Thank you!" ]
 Dialog_failed = [ "Rosa here, I've contacted your superior about your atitude. Next time think twice before failing a task for the grand Dame Rosa !" ]
 PV_lost = 10
 
 [node name="LowerTempCall" parent="Events" instance=ExtResource( 33 )]
-Dialog_start = [ "Elizabeth from the first floor on the phone. My mixer valve is broken, would it pe possible to have colder water for my plants?", "Do be quick, my begonia is already losing leaves !" ]
+Dialog_start = [ "Elizabeth from the first floor on the phone. My mixer valve is broken, would it be possible to have colder water for my plants?", "Do be quick, my begonia is already losing leaves !" ]
 Dialog_success = [ "Elizabeth again, my begonia is thankful for the fresh water." ]
 Dialog_failed = [ "How could you do such a thing ! Do you believe my begonia worthless ?! You'll hear from me again !" ]
 PV_lost = 10
