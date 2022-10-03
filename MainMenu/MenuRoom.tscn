@@ -313,4 +313,5 @@ transform = Transform( 0.329666, 0, 0.226539, 0, 0.4, 0, -0.226539, 0, 0.329666,
 
 [editable path="Boilerco/LargeGauge"]
 [editable path="Alarm"]
+[editable path="Alarm/light_murale"]
 [editable path="Events/BrokenCable"]
