@@ -25,9 +25,9 @@ region_enabled = true
 region_rect = Rect2( 79.5291, 22.133, 601.662, 551.801 )
 
 [node name="Label" type="Label3D" parent="."]
-transform = Transform( -1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, -0.4 )
+transform = Transform( -1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0.02, -0.4 )
+shaded = true
 double_sided = false
-no_depth_test = true
 modulate = Color( 0, 0, 0, 1 )
 text = "Pressure"
 font = SubResource( 1 )

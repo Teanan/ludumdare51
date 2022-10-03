@@ -18,7 +18,7 @@ func trigger_event():
 	_reset_event()
 	activated = true
 	initial_temperature = BoilerAss.temperature
-	Phone.add_dialogue(Dialog_start)
+	Phone.add_dialogue(Dialog_start.duplicate(true))
 	Phone.connect("dialog_completed", self, "_on_pickup")
 
 func _on_pickup(success):
@@ -38,10 +38,10 @@ func _on_Timer_timeout():
 	if (higher_temp and BoilerAss.temperature > initial_temperature) or \
 		(not higher_temp and BoilerAss.temperature < initial_temperature):
 		if not Dialog_success.empty():
-			Phone.add_dialogue(Dialog_success)
+			Phone.add_dialogue(Dialog_success.duplicate(true))
 	else:
 		if not Dialog_failed.empty():
-			Phone.add_dialogue(Dialog_failed)
+			Phone.add_dialogue(Dialog_failed.duplicate(true))
 		_on_failed()
 	_reset_event()
 

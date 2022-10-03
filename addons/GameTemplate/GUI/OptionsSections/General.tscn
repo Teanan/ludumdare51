@@ -216,39 +216,43 @@ size_flags_vertical = 3
 custom_constants/separation = 1
 
 [node name="Control3" type="Control" parent="MarginContainer/VBoxContainer"]
-margin_right = 38.0
+margin_right = 100.0
 margin_bottom = 19.0
 size_flags_horizontal = 3
 
 [node name="Back" parent="MarginContainer/VBoxContainer" groups=["General"] instance=ExtResource( 9 )]
-margin_left = 39.0
-margin_right = 77.0
+margin_left = 101.0
+margin_right = 202.0
 text = "Back"
 
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
-margin_left = 78.0
-margin_right = 116.0
+margin_left = 203.0
+margin_right = 304.0
 margin_bottom = 19.0
 size_flags_horizontal = 3
 
 [node name="LanguagesButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
+visible = false
 margin_left = 117.0
 margin_right = 176.0
 text = "Languages"
 
 [node name="Control4" type="Control" parent="MarginContainer/VBoxContainer"]
-margin_left = 177.0
-margin_right = 215.0
+visible = false
+margin_left = 152.0
+margin_right = 202.0
 margin_bottom = 19.0
 size_flags_horizontal = 3
 
 [node name="Controls" parent="MarginContainer/VBoxContainer" instance=ExtResource( 9 )]
-margin_left = 216.0
-margin_right = 265.0
+visible = false
+margin_left = 183.0
+margin_right = 243.0
 text = "Controls"
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
-margin_left = 266.0
+visible = false
+margin_left = 228.0
 margin_right = 304.0
 margin_bottom = 19.0
 size_flags_horizontal = 3
