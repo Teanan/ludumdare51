@@ -18,9 +18,6 @@ var target_value = 50
 
 onready var rotation_node = get_node("gauge_rotation")
 
-func map(value, fromLow, fromHigh, toLow, toHigh):
-	return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
-
 func set_value(value):
 	if value > MAX_VALUE:
 		target_value = MAX_VALUE
@@ -43,7 +40,7 @@ func _process(delta):
 			current_value = current_value + delta * CONVERGENCE_SPEED
 	
 		#print(current_value)
-		var angle = map(current_value, MIN_VALUE, MAX_VALUE, MIN_ANGLE_DEG, MAX_ANGLE_DEG)
+		var angle = MiscFunc.map(current_value, MIN_VALUE, MAX_VALUE, MIN_ANGLE_DEG, MAX_ANGLE_DEG)
 		#print(angle)
 	
 		rotation_node.rotation_degrees.z = angle
