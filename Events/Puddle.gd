@@ -58,9 +58,6 @@ func _on_FailTimer_timeout():
 func is_activated():
 	return Water.visible
 	
-func is_activable(_temperature, _pressure, cur_events):
-	for event_name in cur_events:
-		if event_name.begins_with("Leak"):
-			return true
-	return false
+func is_activable(_temperature, _pressure, _cur_events):
+	return true
 	
