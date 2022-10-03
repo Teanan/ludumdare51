@@ -28,6 +28,7 @@ transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
 [node name="SFX" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 4 )
 unit_db = -2.0
+bus = "SFX"
 
 [connection signal="mouse_entered" from="." to="." method="_on_Leak_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Leak_mouse_exited"]

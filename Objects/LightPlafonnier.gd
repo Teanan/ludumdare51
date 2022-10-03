@@ -35,6 +35,7 @@ func _on_Timer_timeout():
 func _process(_delta):
 	if mouse_over and Input.is_action_just_pressed("Action"):
 		anim_bobble.play("FastBobble")
+		$SFX.play()
 
 func _on_LightPlafonnier_mouse_entered():
 	mouse_over = true
