@@ -25,6 +25,8 @@ func add_dialogue(dialog: Array):
 		print("Added dialogue to phone waiting : " + str(dialog))
 		waiting_calls.append(dialog)
 		queue_next()
+	else:
+		print("Did you just try to add an empty dialogue? What the heck !")
 	
 func clear_all_dialogue():
 	waiting_calls.clear()
