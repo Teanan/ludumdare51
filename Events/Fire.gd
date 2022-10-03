@@ -60,5 +60,5 @@ func is_activated():
 	return $Fire.visible
 	
 func is_activable(temperature, _pressure, _cur_events):
-	return temperature > 0.5
+	return temperature > 0.3
 	

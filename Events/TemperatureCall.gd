@@ -56,5 +56,5 @@ func is_activated():
 	return activated
 	
 func is_activable(temperature, _pressure, _cur_events):
-	return (higher_temp and temperature < 0.6) or (not higher_temp and temperature > 0.5)
+	return (higher_temp and temperature < 0.6) or (not higher_temp and temperature > 0.4)
 	

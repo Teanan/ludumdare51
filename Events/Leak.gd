@@ -59,5 +59,5 @@ func is_activated():
 	return $Water.visible
 	
 func is_activable(_temperature, r_pressure, _cur_events):
-	return r_pressure > 0.5
+	return r_pressure > 0.3
 	
