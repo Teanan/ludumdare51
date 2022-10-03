@@ -9,6 +9,8 @@ onready var fire_particles = $boiler/FireParticles
 onready var PressureGauge = $"../LargeGauge"
 onready var CoalIcon = $boiler/ToolIcon
 onready var PV = $"../../PV"
+onready var DoorSFX = $boiler/DoorSFX
+onready var BurnSFX = $boiler/BurnSFX
 
 const min_temp = 12
 const max_temp = 125
@@ -71,6 +73,8 @@ func release_pressure():
 func add_coal():
 	if door_opened:
 		coal = coal + 5
+		BurnSFX.play()
+		DoorSFX.play()
 		close_door()
 		CoalIcon.visible = false
 
@@ -86,10 +90,12 @@ func _on_BoilerAssembly_mouse_entered():
 	if get_parent().get_parent().hand != null and \
 		get_parent().get_parent().hand.is_in_group("Coal"):
 		open_door()
+		DoorSFX.play()
 	if coal <= 0:
 		CoalIcon.visible = true
 
 func _on_BoilerAssembly_mouse_exited():
 	if door_opened:
+		DoorSFX.play()
 		close_door()
 	CoalIcon.visible = false
