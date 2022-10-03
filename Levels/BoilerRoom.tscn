@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Objects/BoilerAssembly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Tools/Extinguisher.tscn" type="PackedScene" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Events/Puddle.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Events/BasicCall.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Events/TemperatureCall.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Assets/Sounds/bgm.ogg" type="AudioStream" id=34]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 6, 6 )
@@ -391,6 +392,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24714, 2.69395, -2.3744 )
 
 [node name="EventTimer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
+volume_db = -8.0
+autoplay = true
+bus = "Music"
 
 [connection signal="select" from="CoalPile" to="." method="_on_tool_select"]
 [connection signal="dialog_completed" from="Usables/Phone" to="." method="_on_Phone_dialog_completed"]

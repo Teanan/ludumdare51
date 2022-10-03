@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Models/Misc/board.glb" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Notices/NoticePress.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Notices/NoticeTemp.tscn" type="PackedScene" id=3]
 
 [node name="ToolBoard" type="Spatial"]
 
 [node name="board" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
+
+[node name="NoticePress" parent="board" instance=ExtResource( 2 )]
+transform = Transform( -0.290039, 1.34812e-07, 0.0766641, 0.0766641, -8.08465e-08, 0.290039, 4.52987e-08, 1, 1.31134e-08, 0.6, 0.5, 0.11 )
+
+[node name="NoticeTemp" parent="board" instance=ExtResource( 3 )]
+transform = Transform( -0.296965, 8.65383e-08, -0.0425658, -0.0425658, 1.24041e-08, 0.296965, 2.62268e-08, 1, 5.73206e-16, -0.5, 0.5, 0.1 )

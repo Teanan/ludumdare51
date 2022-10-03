@@ -18,21 +18,19 @@ func _ready():
 func trigger_event():
 	progress = 0
 	self.input_ray_pickable = true
-	$Water.visible = true
 	$Water/CPUParticles.emitting = true
 	$FailTimer.start()
 	print("new leak!")
 
 func clear_event():
 	self.input_ray_pickable = false
-	$Water.visible = false
 	$ToolIcon.visible = false
 	$Water/CPUParticles.emitting = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
 
 func _on_Leak_mouse_entered():
-	if $Water.visible:
+	if $Water/CPUParticles.emitting:
 		$ToolIcon.visible = true
 	$ActionTimer.start()
 
@@ -56,7 +54,7 @@ func _on_FailTimer_timeout():
 
 
 func is_activated():
-	return $Water.visible
+	return $Water/CPUParticles.emitting
 	
 func is_activable(_temperature, r_pressure, _cur_events):
 	return r_pressure > 0.3
