@@ -21,6 +21,7 @@ func trigger_event():
 	Water.visible = true
 	$RaisingWater.play("RaisingPuddle")
 	$FailTimer.start()
+	$SFX.play()
 	print("new puddle!")
 
 func clear_event():
@@ -29,6 +30,7 @@ func clear_event():
 	$ToolIcon.visible = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
+	$SFX.stop()
 
 func _on_Leak_mouse_entered():
 	if Water.visible:

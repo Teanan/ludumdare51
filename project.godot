@@ -201,9 +201,10 @@ translations=PoolStringArray(  )
 
 [rendering]
 
-quality/filters/sharpen_intensity=0.5
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/shadows/filter_mode=2
+quality/filters/use_nearest_mipmap_filter=true
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

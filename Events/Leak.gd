@@ -20,6 +20,7 @@ func trigger_event():
 	self.input_ray_pickable = true
 	$Water/CPUParticles.emitting = true
 	$FailTimer.start()
+	$SFX.play()
 	print("new leak!")
 
 func clear_event():
@@ -28,6 +29,7 @@ func clear_event():
 	$Water/CPUParticles.emitting = false
 	$FailTimer.stop()
 	$ActionTimer.stop()
+	$SFX.stop()
 
 func _on_Leak_mouse_entered():
 	if $Water/CPUParticles.emitting:

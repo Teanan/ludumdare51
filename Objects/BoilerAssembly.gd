@@ -9,13 +9,15 @@ onready var fire_particles = $boiler/FireParticles
 onready var PressureGauge = $"../LargeGauge"
 onready var CoalIcon = $boiler/ToolIcon
 onready var PV = $"../../PV"
+onready var DoorSFX = $boiler/DoorSFX
+onready var BurnSFX = $boiler/BurnSFX
 
 const min_temp = 12
 const max_temp = 125
 const min_pressure = 0
 const max_pressure = 4
 
-const MAX_FIRE_COAL_RATIO = 50
+const MAX_FIRE_COAL_RATIO = 25
 const MIN_FIRE_SCALE = Vector3(1, 1, 2.6)
 const MAX_FIRE_SCALE = Vector3(8, 2.3, 2.6)
 
@@ -33,10 +35,10 @@ func _on_BoilerTick_timeout():
 	if coal > 0:
 		coal = coal - 1
 		if pressure > 0.5:
-			temperature = temperature + 5
+			temperature = temperature + 9.5
 		pressure = pressure + 0.004 * (20 + temperature)
 
-	temperature = clamp(temperature - 2, min_temp, max_temp)
+	temperature = clamp(temperature - 6, min_temp, max_temp)
 	pressure = clamp(pressure - 0.05, 0, max_pressure)
 	
 	if temperature >= 50 and temperature <= 100:
@@ -70,7 +72,9 @@ func release_pressure():
 
 func add_coal():
 	if door_opened:
-		coal = coal + 10
+		coal = coal + 5
+		BurnSFX.play()
+		DoorSFX.play()
 		close_door()
 		CoalIcon.visible = false
 
@@ -86,10 +90,12 @@ func _on_BoilerAssembly_mouse_entered():
 	if get_parent().get_parent().hand != null and \
 		get_parent().get_parent().hand.is_in_group("Coal"):
 		open_door()
+		DoorSFX.play()
 	if coal <= 0:
 		CoalIcon.visible = true
 
 func _on_BoilerAssembly_mouse_exited():
 	if door_opened:
+		DoorSFX.play()
 		close_door()
 	CoalIcon.visible = false
