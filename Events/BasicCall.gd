@@ -10,7 +10,7 @@ var activated = false
 
 func trigger_event():
 	clear_event()
-	Phone.add_dialogue(Dialog)
+	Phone.add_dialogue(Dialog.duplicate(true))
 	activated = true
 	Phone.connect("dialog_completed", self, "_on_pickup")
 
