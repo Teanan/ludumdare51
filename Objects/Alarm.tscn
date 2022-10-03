@@ -41,6 +41,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("light_murale/generated(Clone):mesh:surface_1/material:emission_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "alarm"
@@ -82,6 +94,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 2.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("light_murale/generated(Clone):mesh:surface_1/material:emission_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.91 ]
+}
 
 [node name="Alarm" type="Spatial"]
 script = ExtResource( 2 )
@@ -106,3 +130,5 @@ light_color = Color( 1, 0, 0, 1 )
 light_energy = 0.0
 omni_range = 8.13056
 omni_attenuation = 1.36604
+
+[editable path="light_murale"]
