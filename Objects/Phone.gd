@@ -75,6 +75,7 @@ func _on_Ringing_animation_finished(anim_name):
 		print("You failed at picking up the phone")
 		emit_signal("dialog_completed", false)
 		ringing = false
+		_on_Handset_mouse_exited()
 		nbr_rang = 0
 		waiting_calls.pop_front()
 		queue_next()
