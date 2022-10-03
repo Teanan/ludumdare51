@@ -165,3 +165,5 @@ func game_over():
 	
 func _on_Phone_dialog_completed(fully):
 	hand = null
+	if is_game_over:
+		Game.emit_signal("ChangeScene", "res://MainMenu/BackgroundMainMenu.tscn")
