@@ -38,7 +38,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GameTemplate"
+config/name="Under Pressure"
+config/description="Made for LudumDare 51 by Evanaellio, Salier, Teanan, Wolfy"
 run/main_scene="res://MainMenu/BackgroundMainMenu.tscn"
 config/icon="res://icon.png"
 
